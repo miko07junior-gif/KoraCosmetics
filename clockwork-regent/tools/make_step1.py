@@ -34,7 +34,7 @@ FONT_B = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.tt
 
 WHITE, BLACK = (255, 255, 255), (0, 0, 0)
 SIL = {k: BLACK for k in range(7)}
-NOTAN = {scene.SKIN: (128, 128, 128), scene.ARMOR: (128, 128, 128), scene.CAPE: (128, 128, 128),
+NOTAN = {scene.SKIN: (168, 168, 168), scene.ARMOR: (168, 168, 168), scene.CAPE: (168, 168, 168),
          scene.BRONZE: BLACK, scene.BRASS: WHITE, scene.IVORY: WHITE, scene.AMBER: WHITE}
 # Value key: blackened bronze dark, aged brass mid, ivory enamel and amber light.
 VALUE = {scene.SKIN: (92, 92, 92), scene.ARMOR: (92, 92, 92), scene.CAPE: (92, 92, 92),
@@ -177,8 +177,9 @@ def main():
             its = scene.items(STATES[state])
             cam = fit_ortho(v, its, 220)
             ids, _ = render.rasterise(cam, its)
-            panels.append(label(Image.fromarray(render.colourise(ids, NOTAN, (128, 128, 128))), f"{state} {v.replace('_', ' ')}"))
-    grid(panels, 4, title="Notan: blackened bronze = black, brass / ivory / amber = white; wearer and field = mid grey"
+            panels.append(label(Image.fromarray(render.colourise(ids, NOTAN, (112, 112, 112))),
+                                f"{state} {v.replace('three_quarter', '3/4').replace('_', ' ')}"))
+    grid(panels, 4, title="Notan: blackened bronze = black, brass / ivory / amber = white; wearer light grey, field mid grey"
          ).save(os.path.join(OUT, "notan.png"))
 
     # 4. Value key: three values on neutral dark grey, with measured shares of visible area.

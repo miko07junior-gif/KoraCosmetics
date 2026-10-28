@@ -399,14 +399,14 @@
    "ivory_amber": 0.014
   },
   "folded_back": {
-   "bronze": 0.548,
-   "brass": 0.285,
-   "ivory_amber": 0.167
+   "bronze": 0.554,
+   "brass": 0.277,
+   "ivory_amber": 0.169
   },
   "folded_three_quarter_back": {
-   "bronze": 0.581,
-   "brass": 0.281,
-   "ivory_amber": 0.138
+   "bronze": 0.591,
+   "brass": 0.27,
+   "ivory_amber": 0.139
   },
   "spread_front": {
    "bronze": 0.763,
@@ -414,14 +414,14 @@
    "ivory_amber": 0.022
   },
   "spread_back": {
-   "bronze": 0.71,
-   "brass": 0.194,
-   "ivory_amber": 0.095
+   "bronze": 0.714,
+   "brass": 0.19,
+   "ivory_amber": 0.096
   },
   "spread_three_quarter_back": {
-   "bronze": 0.713,
-   "brass": 0.196,
-   "ivory_amber": 0.091
+   "bronze": 0.718,
+   "brass": 0.19,
+   "ivory_amber": 0.092
   }
  }
 }

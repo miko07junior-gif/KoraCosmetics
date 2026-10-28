@@ -1,0 +1,1030 @@
+{
+ "body": [
+  {
+   "model": "shoulder_r:elbow_knuckle",
+   "player": "right_arm",
+   "gap": -2.15,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "shoulder_r:humerus",
+   "player": "right_arm",
+   "gap": -1.84,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "forearm_r:voussoir",
+   "player": "right_arm",
+   "gap": -1.83,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "forearm_r:band",
+   "player": "right_arm",
+   "gap": -1.72,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_0:rib",
+   "player": "right_arm",
+   "gap": -1.02,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_1:rib",
+   "player": "right_arm",
+   "gap": -1.02,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_2:rib",
+   "player": "right_arm",
+   "gap": -1.02,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_3:rib",
+   "player": "right_arm",
+   "gap": -1.02,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_4:rib",
+   "player": "right_arm",
+   "gap": -1.02,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_5:rib",
+   "player": "right_arm",
+   "gap": -1.02,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_6:rib",
+   "player": "right_arm",
+   "gap": -1.02,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_0:sheath",
+   "player": "right_arm",
+   "gap": -0.96,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_1:sheath",
+   "player": "right_arm",
+   "gap": -0.96,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_2:sheath",
+   "player": "right_arm",
+   "gap": -0.96,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_3:sheath",
+   "player": "right_arm",
+   "gap": -0.96,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_4:sheath",
+   "player": "right_arm",
+   "gap": -0.96,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_5:sheath",
+   "player": "right_arm",
+   "gap": -0.96,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_6:sheath",
+   "player": "right_arm",
+   "gap": -0.96,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "elbow_gear_r:gear",
+   "player": "right_arm",
+   "gap": -0.9,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "shoulder_r:elbow_knuckle",
+   "player": "right_arm",
+   "gap": -0.86,
+   "state": "folded",
+   "pose": "bow look -90/50",
+   "rare": false
+  },
+  {
+   "model": "forearm_r:voussoir",
+   "player": "right_arm",
+   "gap": -0.86,
+   "state": "folded",
+   "pose": "bow look -90/50",
+   "rare": false
+  },
+  {
+   "model": "forearm_r:cusp",
+   "player": "right_arm",
+   "gap": -0.66,
+   "state": "folded",
+   "pose": "trident overhead 1/8",
+   "rare": true
+  },
+  {
+   "model": "forearm_r:band",
+   "player": "right_arm",
+   "gap": -0.64,
+   "state": "folded",
+   "pose": "bow look -90/50",
+   "rare": false
+  },
+  {
+   "model": "primaries_r_0_ext:rib",
+   "player": "right_arm",
+   "gap": -0.6,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_1_ext:rib",
+   "player": "right_arm",
+   "gap": -0.6,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_2_ext:rib",
+   "player": "right_arm",
+   "gap": -0.6,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_3_ext:rib",
+   "player": "right_arm",
+   "gap": -0.6,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_4_ext:rib",
+   "player": "right_arm",
+   "gap": -0.6,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_5_ext:rib",
+   "player": "right_arm",
+   "gap": -0.6,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_6_ext:rib",
+   "player": "right_arm",
+   "gap": -0.6,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_0_ext:blade",
+   "player": "right_arm",
+   "gap": -0.55,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_1_ext:blade",
+   "player": "right_arm",
+   "gap": -0.55,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_2_ext:blade",
+   "player": "right_arm",
+   "gap": -0.55,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_3_ext:blade",
+   "player": "right_arm",
+   "gap": -0.55,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_4_ext:blade",
+   "player": "right_arm",
+   "gap": -0.55,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_5_ext:blade",
+   "player": "right_arm",
+   "gap": -0.55,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_6_ext:blade",
+   "player": "right_arm",
+   "gap": -0.55,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "secondaries_r_0:rib",
+   "player": "right_arm",
+   "gap": -0.52,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "secondaries_r_1:rib",
+   "player": "right_arm",
+   "gap": -0.52,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "secondaries_r_2:rib",
+   "player": "right_arm",
+   "gap": -0.52,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "secondaries_r_3:rib",
+   "player": "right_arm",
+   "gap": -0.52,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "secondaries_r_4:rib",
+   "player": "right_arm",
+   "gap": -0.52,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "secondaries_r_5:rib",
+   "player": "right_arm",
+   "gap": -0.52,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "shoulder_r:humerus_trim",
+   "player": "right_arm",
+   "gap": -0.51,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "secondaries_r_0:blade",
+   "player": "right_arm",
+   "gap": -0.46,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "secondaries_r_1:blade",
+   "player": "right_arm",
+   "gap": -0.46,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "secondaries_r_2:blade",
+   "player": "right_arm",
+   "gap": -0.46,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "secondaries_r_3:blade",
+   "player": "right_arm",
+   "gap": -0.46,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "secondaries_r_4:blade",
+   "player": "right_arm",
+   "gap": -0.46,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "secondaries_r_5:blade",
+   "player": "right_arm",
+   "gap": -0.46,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_6:rivet",
+   "player": "right_arm",
+   "gap": -0.45,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_5:rivet",
+   "player": "right_arm",
+   "gap": -0.44,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_4:rivet",
+   "player": "right_arm",
+   "gap": -0.43,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_2:rivet",
+   "player": "right_arm",
+   "gap": -0.42,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_3:rivet",
+   "player": "right_arm",
+   "gap": -0.42,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_1:rivet",
+   "player": "right_arm",
+   "gap": -0.41,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "primaries_r_0:rivet",
+   "player": "right_arm",
+   "gap": -0.4,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "shoulder_r:humerus",
+   "player": "right_arm",
+   "gap": -0.27,
+   "state": "folded",
+   "pose": "bow look -90/50",
+   "rare": false
+  },
+  {
+   "model": "shoulder_r:piston_lug",
+   "player": "right_arm",
+   "gap": -0.25,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "elbow_gear_r:elbow_cap",
+   "player": "right_arm",
+   "gap": -0.21,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "humerus_piston_r_rod:piston_eye",
+   "player": "right_arm",
+   "gap": -0.17,
+   "state": "spread",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "shoulder_r:shoulder_joint",
+   "player": "right_arm",
+   "gap": -0.14,
+   "state": "secondaries_rise",
+   "pose": "horn look -45/50",
+   "rare": false
+  },
+  {
+   "model": "shoulder_l:shoulder_joint",
+   "player": "left_arm",
+   "gap": -0.09,
+   "state": "folded",
+   "pose": "bow look -45/-50",
+   "rare": false
+  },
+  {
+   "model": "coverts_r_0:rib",
+   "player": "right_arm",
+   "gap": -0.02,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "coverts_r_1:rib",
+   "player": "right_arm",
+   "gap": -0.02,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "coverts_r_2:rib",
+   "player": "right_arm",
+   "gap": -0.02,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "coverts_r_3:rib",
+   "player": "right_arm",
+   "gap": -0.02,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "coverts_r_4:rib",
+   "player": "right_arm",
+   "gap": -0.02,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "secondaries_r_0:rivet",
+   "player": "right_arm",
+   "gap": -0.0,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "secondaries_r_1:rivet",
+   "player": "right_arm",
+   "gap": 0.0,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "secondaries_r_2:rivet",
+   "player": "right_arm",
+   "gap": 0.0,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "secondaries_r_3:rivet",
+   "player": "right_arm",
+   "gap": 0.0,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "secondaries_r_4:rivet",
+   "player": "right_arm",
+   "gap": 0.01,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "secondaries_r_5:rivet",
+   "player": "right_arm",
+   "gap": 0.01,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "root_r:root_plate",
+   "player": "body",
+   "gap": 0.02,
+   "state": "folded",
+   "pose": "sprint phase 0/32",
+   "rare": false
+  },
+  {
+   "model": "root_l:root_plate",
+   "player": "body",
+   "gap": 0.02,
+   "state": "folded",
+   "pose": "sprint phase 0/32",
+   "rare": false
+  },
+  {
+   "model": "root_r:root_plate",
+   "player": "body",
+   "gap": 0.02,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "root_l:root_plate",
+   "player": "body",
+   "gap": 0.02,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "shoulder_r:humerus_root",
+   "player": "right_arm",
+   "gap": 0.03,
+   "state": "secondaries_rise",
+   "pose": "sprint phase 16/32",
+   "rare": false
+  },
+  {
+   "model": "coverts_r_0:blade",
+   "player": "right_arm",
+   "gap": 0.04,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "coverts_r_1:blade",
+   "player": "right_arm",
+   "gap": 0.04,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "coverts_r_2:blade",
+   "player": "right_arm",
+   "gap": 0.04,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "coverts_r_3:blade",
+   "player": "right_arm",
+   "gap": 0.04,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "coverts_r_4:blade",
+   "player": "right_arm",
+   "gap": 0.04,
+   "state": "folded",
+   "pose": "trident overhead 0/8",
+   "rare": true
+  },
+  {
+   "model": "heart:heart_lobe",
+   "player": "body",
+   "gap": 0.05,
+   "state": "spread",
+   "pose": "horn look 90/50",
+   "rare": false
+  },
+  {
+   "model": "heart:heart_crown",
+   "player": "body",
+   "gap": 0.05,
+   "state": "spread",
+   "pose": "attack swing 0.85 look 60",
+   "rare": false
+  },
+  {
+   "model": "heart:heart_lobe",
+   "player": "body",
+   "gap": 0.05,
+   "state": "spread",
+   "pose": "trident overhead 7/8",
+   "rare": true
+  },
+  {
+   "model": "heart:heart_crown",
+   "player": "body",
+   "gap": 0.05,
+   "state": "spread",
+   "pose": "trident overhead 7/8",
+   "rare": true
+  }
+ ],
+ "head": [
+  {
+   "state": "folded",
+   "sneak": false,
+   "look_up": 0,
+   "worst_gap": -1.05,
+   "beyond_vanilla": -1.05,
+   "nearest": "shoulder_r:humerus_root x helmet (yaw -60)"
+  },
+  {
+   "state": "folded",
+   "sneak": false,
+   "look_up": 10,
+   "worst_gap": -1.44,
+   "beyond_vanilla": -0.77,
+   "nearest": "shoulder_r:humerus_root x helmet (yaw -60)"
+  },
+  {
+   "state": "folded",
+   "sneak": false,
+   "look_up": 20,
+   "worst_gap": -1.89,
+   "beyond_vanilla": -0.68,
+   "nearest": "shoulder_l:humerus_root x helmet (yaw -30)"
+  },
+  {
+   "state": "folded",
+   "sneak": false,
+   "look_up": 30,
+   "worst_gap": -2.22,
+   "beyond_vanilla": -0.98,
+   "nearest": "shoulder_l:humerus_root x helmet (yaw -30)"
+  },
+  {
+   "state": "folded",
+   "sneak": false,
+   "look_up": 40,
+   "worst_gap": -2.76,
+   "beyond_vanilla": -1.45,
+   "nearest": "shoulder_r:humerus x helmet (yaw -15)"
+  },
+  {
+   "state": "folded",
+   "sneak": false,
+   "look_up": 50,
+   "worst_gap": -3.84,
+   "beyond_vanilla": -1.56,
+   "nearest": "shoulder_r:humerus x helmet (yaw -15)"
+  },
+  {
+   "state": "folded",
+   "sneak": false,
+   "look_up": 60,
+   "worst_gap": -4.33,
+   "beyond_vanilla": -1.76,
+   "nearest": "shoulder_r:humerus x helmet (yaw -15)"
+  },
+  {
+   "state": "folded",
+   "sneak": false,
+   "look_up": 70,
+   "worst_gap": -4.36,
+   "beyond_vanilla": -1.74,
+   "nearest": "humerus_piston_r_rod:piston_rod x helmet (yaw -15)"
+  },
+  {
+   "state": "folded",
+   "sneak": false,
+   "look_up": 80,
+   "worst_gap": -4.86,
+   "beyond_vanilla": -1.81,
+   "nearest": "humerus_piston_r_rod:piston_rod x helmet (yaw -30)"
+  },
+  {
+   "state": "folded",
+   "sneak": false,
+   "look_up": 90,
+   "worst_gap": -4.48,
+   "beyond_vanilla": -2.15,
+   "nearest": "shoulder_r:humerus_root x helmet (yaw -15)"
+  },
+  {
+   "state": "folded",
+   "sneak": true,
+   "look_up": 0,
+   "worst_gap": -2.89,
+   "beyond_vanilla": -0.94,
+   "nearest": "shoulder_r:shoulder_joint x helmet (yaw -60)"
+  },
+  {
+   "state": "folded",
+   "sneak": true,
+   "look_up": 10,
+   "worst_gap": -3.0,
+   "beyond_vanilla": -0.55,
+   "nearest": "shoulder_l:shoulder_joint x helmet (yaw -30)"
+  },
+  {
+   "state": "folded",
+   "sneak": true,
+   "look_up": 20,
+   "worst_gap": -3.49,
+   "beyond_vanilla": -0.67,
+   "nearest": "shoulder_r:humerus x helmet (yaw -75)"
+  },
+  {
+   "state": "folded",
+   "sneak": true,
+   "look_up": 30,
+   "worst_gap": -3.79,
+   "beyond_vanilla": -1.04,
+   "nearest": "shoulder_r:humerus x helmet (yaw -15)"
+  },
+  {
+   "state": "folded",
+   "sneak": true,
+   "look_up": 40,
+   "worst_gap": -4.49,
+   "beyond_vanilla": -1.24,
+   "nearest": "humerus_piston_r_rod:piston_rod x helmet (yaw -15)"
+  },
+  {
+   "state": "folded",
+   "sneak": true,
+   "look_up": 50,
+   "worst_gap": -4.39,
+   "beyond_vanilla": -1.55,
+   "nearest": "humerus_piston_r_rod:piston_rod x helmet (yaw -30)"
+  },
+  {
+   "state": "folded",
+   "sneak": true,
+   "look_up": 60,
+   "worst_gap": -4.81,
+   "beyond_vanilla": -2.19,
+   "nearest": "shoulder_r:humerus_root x helmet (yaw -15)"
+  },
+  {
+   "state": "folded",
+   "sneak": true,
+   "look_up": 70,
+   "worst_gap": -5.32,
+   "beyond_vanilla": -1.61,
+   "nearest": "shoulder_r:shoulder_joint x helmet (yaw -15)"
+  },
+  {
+   "state": "folded",
+   "sneak": true,
+   "look_up": 80,
+   "worst_gap": -5.39,
+   "beyond_vanilla": -0.93,
+   "nearest": "shoulder_r:shoulder_joint x helmet (yaw -15)"
+  },
+  {
+   "state": "folded",
+   "sneak": true,
+   "look_up": 90,
+   "worst_gap": -5.08,
+   "beyond_vanilla": -0.37,
+   "nearest": "root_r:root_plate x helmet (yaw -15)"
+  },
+  {
+   "state": "spread",
+   "sneak": false,
+   "look_up": 0,
+   "worst_gap": -0.92,
+   "beyond_vanilla": -0.92,
+   "nearest": "shoulder_r:humerus x helmet (yaw -75)"
+  },
+  {
+   "state": "spread",
+   "sneak": false,
+   "look_up": 10,
+   "worst_gap": -1.32,
+   "beyond_vanilla": -0.65,
+   "nearest": "shoulder_r:humerus_root x helmet (yaw -60)"
+  },
+  {
+   "state": "spread",
+   "sneak": false,
+   "look_up": 20,
+   "worst_gap": -1.75,
+   "beyond_vanilla": -0.7,
+   "nearest": "shoulder_l:humerus_root x helmet (yaw -30)"
+  },
+  {
+   "state": "spread",
+   "sneak": false,
+   "look_up": 30,
+   "worst_gap": -2.16,
+   "beyond_vanilla": -0.6,
+   "nearest": "shoulder_l:humerus_root x helmet (yaw -30)"
+  },
+  {
+   "state": "spread",
+   "sneak": false,
+   "look_up": 40,
+   "worst_gap": -2.51,
+   "beyond_vanilla": -0.93,
+   "nearest": "shoulder_l:shoulder_joint x helmet (yaw -30)"
+  },
+  {
+   "state": "spread",
+   "sneak": false,
+   "look_up": 50,
+   "worst_gap": -3.0,
+   "beyond_vanilla": -1.08,
+   "nearest": "shoulder_r:humerus x helmet (yaw -15)"
+  },
+  {
+   "state": "spread",
+   "sneak": false,
+   "look_up": 60,
+   "worst_gap": -4.04,
+   "beyond_vanilla": -1.71,
+   "nearest": "shoulder_r:humerus x helmet (yaw -15)"
+  },
+  {
+   "state": "spread",
+   "sneak": false,
+   "look_up": 70,
+   "worst_gap": -4.36,
+   "beyond_vanilla": -1.73,
+   "nearest": "humerus_piston_r_rod:piston_rod x helmet (yaw -15)"
+  },
+  {
+   "state": "spread",
+   "sneak": false,
+   "look_up": 80,
+   "worst_gap": -4.86,
+   "beyond_vanilla": -1.81,
+   "nearest": "humerus_piston_r_rod:piston_rod x helmet (yaw -30)"
+  },
+  {
+   "state": "spread",
+   "sneak": false,
+   "look_up": 90,
+   "worst_gap": -4.46,
+   "beyond_vanilla": -2.15,
+   "nearest": "shoulder_r:humerus_root x helmet (yaw -15)"
+  },
+  {
+   "state": "spread",
+   "sneak": true,
+   "look_up": 0,
+   "worst_gap": -2.9,
+   "beyond_vanilla": -0.94,
+   "nearest": "shoulder_r:shoulder_joint x helmet (yaw -60)"
+  },
+  {
+   "state": "spread",
+   "sneak": true,
+   "look_up": 10,
+   "worst_gap": -2.92,
+   "beyond_vanilla": -0.38,
+   "nearest": "shoulder_l:shoulder_joint x helmet (yaw -30)"
+  },
+  {
+   "state": "spread",
+   "sneak": true,
+   "look_up": 20,
+   "worst_gap": -3.06,
+   "beyond_vanilla": -0.31,
+   "nearest": "shoulder_r:humerus x helmet (yaw -75)"
+  },
+  {
+   "state": "spread",
+   "sneak": true,
+   "look_up": 30,
+   "worst_gap": -3.82,
+   "beyond_vanilla": -1.04,
+   "nearest": "shoulder_r:humerus x helmet (yaw -15)"
+  },
+  {
+   "state": "spread",
+   "sneak": true,
+   "look_up": 40,
+   "worst_gap": -4.49,
+   "beyond_vanilla": -1.24,
+   "nearest": "humerus_piston_r_rod:piston_rod x helmet (yaw -15)"
+  },
+  {
+   "state": "spread",
+   "sneak": true,
+   "look_up": 50,
+   "worst_gap": -4.39,
+   "beyond_vanilla": -1.54,
+   "nearest": "humerus_piston_r_rod:piston_rod x helmet (yaw -30)"
+  },
+  {
+   "state": "spread",
+   "sneak": true,
+   "look_up": 60,
+   "worst_gap": -4.77,
+   "beyond_vanilla": -2.26,
+   "nearest": "shoulder_r:humerus_root x helmet (yaw -15)"
+  },
+  {
+   "state": "spread",
+   "sneak": true,
+   "look_up": 70,
+   "worst_gap": -5.31,
+   "beyond_vanilla": -1.71,
+   "nearest": "shoulder_r:shoulder_joint x helmet (yaw -15)"
+  },
+  {
+   "state": "spread",
+   "sneak": true,
+   "look_up": 80,
+   "worst_gap": -5.39,
+   "beyond_vanilla": -1.03,
+   "nearest": "shoulder_r:shoulder_joint x helmet (yaw -15)"
+  },
+  {
+   "state": "spread",
+   "sneak": true,
+   "look_up": 90,
+   "worst_gap": -5.08,
+   "beyond_vanilla": -0.39,
+   "nearest": "root_r:root_plate x helmet (yaw -15)"
+  }
+ ]
+}

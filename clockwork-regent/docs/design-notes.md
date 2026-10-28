@@ -38,7 +38,7 @@ chestplate (the first gray box needed 12.8 px).
 - A turned head sweeps a helmet corner around a 7.07 px circle about the neck.
 - Sneaking pitches the body 0.5 rad, and vanilla's own helmet already sinks about 2 px into the upper back.
 - Anything on the upper back near the neck is inside both, so a turned or sneaking helmet brushes the wing shoulders.
-- Arms, body and legs stay clean in every motion pose. Section 6 has the numbers.
+- Arms, body and legs stay clean in every everyday motion pose. Section 6 has the numbers.
 
 ## 3. Sizes
 
@@ -76,7 +76,36 @@ plays the same clips on the vanilla sneak pose.
 
 ### Clipping
 
-CLIP_TABLE
+Every model primitive against the vanilla player (classic and slim arms, with and
+without armor) over its pose envelope, for every wing state. Sources:
+`../renders/checks/contacts.json` (`tools/contacts.py`) and `clip_*.json` (`tools/clipcheck.py`).
+
+**Arms, body, legs**
+
+| Pose | Result |
+|---|---|
+| Standing, walking, sprinting, sneaking, attack swing | **clean**; closest 0.02 px (sprint) |
+| Item poses: eating/using, shield, crossbow held | clean |
+| Bow drawn straight up with the head turned 50 deg | the raised arm reaches the elbow by 0.86 px |
+| Goat horn or bow at 45 deg with the head turned 50 deg | 0.09-0.14 px into the shoulder joint |
+| Overhead trident throw (rare) | up to 2.15 px into the elbow and the folded tiers |
+| Pistons | inside their travel in every state (overlap >= 1.55 px) |
+
+**Head.** This is the cost of mounting flush on the back (section 2). The second
+column says how far a contact goes beyond vanilla's own head-into-body overlap in
+the same pose.
+
+| Pose | Bare head | Hat layer / helmet | Beyond vanilla's overlap (helmet) |
+|---|---|---|---|
+| Standing, looking level, head turned up to 75 deg | clean | up to 0.65 / 1.34 px at ~65 deg turn | 1.3 px |
+| Looking up 30 deg | n/a | up to 2.2 px (helmet) | 1.0 px |
+| Looking up 60-90 deg | n/a | up to 4.9 px (helmet) | 1.7-2.2 px |
+| Sneaking, looking level | 1.9 px (vanilla's own overlap there is 1.96) | 2.4 / 2.9 px | 0.9 px |
+
+In plain terms: arms, body and legs stay clean in everything a player does all the
+time. A head turned far round, looking up, or sneaking brushes the wing shoulders
+by a pixel or two, mostly with a helmet on. Standing the wing 4 px off the back
+would remove that, and the owner ruled that out.
 
 ### Value key
 

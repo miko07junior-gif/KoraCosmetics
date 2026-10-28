@@ -1,0 +1,73 @@
+folded                 clips=7   min_clearance= -4.84  nearest=shoulder_l:humerus_root @ attack swing 0.95 look -60
+     4.84 px  shoulder_l:humerus_root            x head:helmet                attack swing 0.95 look -60
+     4.34 px  shoulder_l:humerus_root            x head:hat_layer             attack swing 0.95 look -60
+     3.84 px  shoulder_l:humerus_root            x head:head                  attack swing 0.95 look -60
+     2.15 px  shoulder_r:elbow_knuckle           x right_arm:right_pauldron   trident overhead 0/8
+      1.4 px  shoulder_r:elbow_knuckle           x right_arm:right_sleeve     trident overhead 0/8
+     1.15 px  shoulder_r:elbow_knuckle           x right_arm:right_arm        trident overhead 0/8
+     0.09 px  shoulder_l:shoulder_joint          x left_arm:left_pauldron     bow look -45/-50
+arch_splits            clips=7   min_clearance= -4.84  nearest=shoulder_l:humerus_root @ attack swing 0.95 look -60
+     4.84 px  shoulder_l:humerus_root            x head:helmet                attack swing 0.95 look -60
+     4.34 px  shoulder_l:humerus_root            x head:hat_layer             attack swing 0.95 look -60
+     3.84 px  shoulder_l:humerus_root            x head:head                  attack swing 0.95 look -60
+     1.94 px  shoulder_r:elbow_knuckle           x right_arm:right_pauldron   trident overhead 0/8
+     1.19 px  shoulder_r:elbow_knuckle           x right_arm:right_sleeve     trident overhead 0/8
+     0.92 px  shoulder_r:elbow_knuckle           x right_arm:right_arm        trident overhead 0/8
+     0.08 px  shoulder_l:shoulder_joint          x left_arm:left_pauldron     bow look 45/-50
+coverts_rise           clips=7   min_clearance= -4.83  nearest=shoulder_l:humerus_root @ attack swing 0.95 look -60
+     4.83 px  shoulder_l:humerus_root            x head:helmet                attack swing 0.95 look -60
+     4.33 px  shoulder_l:humerus_root            x head:hat_layer             attack swing 0.95 look -60
+     3.83 px  shoulder_l:humerus_root            x head:head                  attack swing 0.95 look -60
+     1.67 px  shoulder_r:elbow_knuckle           x right_arm:right_pauldron   trident overhead 0/8
+     0.91 px  shoulder_r:elbow_knuckle           x right_arm:right_sleeve     trident overhead 0/8
+     0.58 px  shoulder_r:elbow_knuckle           x right_arm:right_arm        trident overhead 0/8
+     0.08 px  shoulder_l:shoulder_joint          x left_arm:left_pauldron     bow look 45/-50
+secondaries_rise       clips=7   min_clearance= -4.83  nearest=shoulder_l:humerus_root @ attack swing 0.95 look -60
+     4.83 px  shoulder_l:humerus_root            x head:helmet                attack swing 0.95 look -60
+     4.33 px  shoulder_l:humerus_root            x head:hat_layer             attack swing 0.95 look -60
+     3.83 px  shoulder_l:humerus_root            x head:head                  attack swing 0.95 look -60
+     1.48 px  shoulder_r:elbow_knuckle           x right_arm:right_pauldron   trident overhead 0/8
+     0.66 px  shoulder_r:elbow_knuckle           x right_arm:right_sleeve     trident overhead 0/8
+     0.32 px  shoulder_r:elbow_knuckle           x right_arm:right_arm        trident overhead 0/8
+     0.08 px  shoulder_l:shoulder_joint          x left_arm:left_pauldron     bow look -45/-50
+primaries_fan          clips=7   min_clearance= -4.83  nearest=shoulder_l:humerus_root @ attack swing 0.95 look -60
+     4.83 px  shoulder_l:humerus_root            x head:helmet                attack swing 0.95 look -60
+     4.33 px  shoulder_l:humerus_root            x head:hat_layer             attack swing 0.95 look -60
+     3.83 px  shoulder_l:humerus_root            x head:head                  attack swing 0.95 look -60
+     1.48 px  shoulder_r:elbow_knuckle           x right_arm:right_pauldron   trident overhead 0/8
+     0.66 px  shoulder_r:elbow_knuckle           x right_arm:right_sleeve     trident overhead 0/8
+     0.32 px  shoulder_r:elbow_knuckle           x right_arm:right_arm        trident overhead 0/8
+     0.08 px  shoulder_l:shoulder_joint          x left_arm:left_pauldron     bow look -45/-50
+spread                 clips=7   min_clearance= -4.83  nearest=shoulder_l:humerus_root @ attack swing 0.95 look -60
+     4.83 px  shoulder_l:humerus_root            x head:helmet                attack swing 0.95 look -60
+     4.33 px  shoulder_l:humerus_root            x head:hat_layer             attack swing 0.95 look -60
+     3.83 px  shoulder_l:humerus_root            x head:head                  attack swing 0.95 look -60
+     1.48 px  shoulder_r:elbow_knuckle           x right_arm:right_pauldron   trident overhead 0/8
+     0.66 px  shoulder_r:elbow_knuckle           x right_arm:right_sleeve     trident overhead 0/8
+     0.32 px  shoulder_r:elbow_knuckle           x right_arm:right_arm        trident overhead 0/8
+     0.08 px  shoulder_l:shoulder_joint          x left_arm:left_pauldron     bow look -45/-50
+unfold_25              clips=7   min_clearance= -4.84  nearest=shoulder_l:humerus_root @ attack swing 0.95 look -60
+     4.84 px  shoulder_l:humerus_root            x head:helmet                attack swing 0.95 look -60
+     4.34 px  shoulder_l:humerus_root            x head:hat_layer             attack swing 0.95 look -60
+     3.84 px  shoulder_l:humerus_root            x head:head                  attack swing 0.95 look -60
+     1.97 px  shoulder_r:elbow_knuckle           x right_arm:right_pauldron   trident overhead 0/8
+     1.22 px  shoulder_r:elbow_knuckle           x right_arm:right_sleeve     trident overhead 0/8
+     0.96 px  shoulder_r:elbow_knuckle           x right_arm:right_arm        trident overhead 0/8
+     0.08 px  shoulder_l:shoulder_joint          x left_arm:left_pauldron     bow look -45/-50
+unfold_50              clips=7   min_clearance= -4.84  nearest=shoulder_l:humerus_root @ attack swing 0.95 look -60
+     4.84 px  shoulder_l:humerus_root            x head:helmet                attack swing 0.95 look -60
+     4.34 px  shoulder_l:humerus_root            x head:hat_layer             attack swing 0.95 look -60
+     3.84 px  shoulder_l:humerus_root            x head:head                  attack swing 0.95 look -60
+      1.8 px  shoulder_r:elbow_knuckle           x right_arm:right_pauldron   trident overhead 0/8
+     1.05 px  shoulder_r:elbow_knuckle           x right_arm:right_sleeve     trident overhead 0/8
+     0.75 px  shoulder_r:elbow_knuckle           x right_arm:right_arm        trident overhead 0/8
+     0.08 px  shoulder_l:shoulder_joint          x left_arm:left_pauldron     bow look -45/-50
+unfold_75              clips=7   min_clearance= -4.83  nearest=shoulder_l:humerus_root @ attack swing 0.95 look -60
+     4.83 px  shoulder_l:humerus_root            x head:helmet                attack swing 0.95 look -60
+     4.33 px  shoulder_l:humerus_root            x head:hat_layer             attack swing 0.95 look -60
+     3.83 px  shoulder_l:humerus_root            x head:head                  attack swing 0.95 look -60
+     1.64 px  shoulder_r:elbow_knuckle           x right_arm:right_pauldron   trident overhead 0/8
+     0.87 px  shoulder_r:elbow_knuckle           x right_arm:right_sleeve     trident overhead 0/8
+     0.54 px  shoulder_r:elbow_knuckle           x right_arm:right_arm        trident overhead 0/8
+     0.08 px  shoulder_l:shoulder_joint          x left_arm:left_pauldron     bow look 45/-50
+pistons: [{'piston': 'humerus_piston_r_cyl', 'L_min': 7.62, 'L_max': 7.74, 'overlap_min': 1.55, 'rod_base_min': 2.97, 'ok': True}, {'piston': 'humerus_piston_l_cyl', 'L_min': 7.62, 'L_max': 7.74, 'overlap_min': 1.55, 'rod_base_min': 2.97, 'ok': True}]

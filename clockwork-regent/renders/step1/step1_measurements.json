@@ -1,0 +1,442 @@
+{
+ "assumptions": {
+  "icon_sizes": "(64, 96, 128) are placeholders until Kora's menu preview size is read from its files",
+  "screens": "resolution/FOV pairs are placeholders until Kora's player data is available; Minecraft FOV is vertical",
+  "player_scale": "vanilla renders the player model at 15/16; cosmetics assumed to inherit it",
+  "distance": "30 blocks horizontal, both eyes at 1.62 blocks, looking level, no view bobbing"
+ },
+ "thirty_blocks": [
+  {
+   "res": [
+    1366,
+    768
+   ],
+   "fov": 70,
+   "state": "none",
+   "facing": "front",
+   "w_px": 20,
+   "h_px": 35
+  },
+  {
+   "res": [
+    1366,
+    768
+   ],
+   "fov": 70,
+   "state": "folded",
+   "facing": "front",
+   "w_px": 28,
+   "h_px": 45
+  },
+  {
+   "res": [
+    1366,
+    768
+   ],
+   "fov": 70,
+   "state": "folded",
+   "facing": "back",
+   "w_px": 30,
+   "h_px": 46
+  },
+  {
+   "res": [
+    1366,
+    768
+   ],
+   "fov": 70,
+   "state": "folded",
+   "facing": "side",
+   "w_px": 23,
+   "h_px": 46
+  },
+  {
+   "res": [
+    1366,
+    768
+   ],
+   "fov": 70,
+   "state": "spread",
+   "facing": "back",
+   "w_px": 68,
+   "h_px": 49
+  },
+  {
+   "res": [
+    1366,
+    768
+   ],
+   "fov": 70,
+   "state": "spread",
+   "facing": "three_quarter",
+   "w_px": 48,
+   "h_px": 49
+  },
+  {
+   "res": [
+    1366,
+    768
+   ],
+   "fov": 70,
+   "state": "spread_lowered",
+   "facing": "back",
+   "w_px": 68,
+   "h_px": 36
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 70,
+   "state": "none",
+   "facing": "front",
+   "w_px": 28,
+   "h_px": 49
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 70,
+   "state": "folded",
+   "facing": "front",
+   "w_px": 40,
+   "h_px": 63
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 70,
+   "state": "folded",
+   "facing": "back",
+   "w_px": 42,
+   "h_px": 64
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 70,
+   "state": "folded",
+   "facing": "side",
+   "w_px": 32,
+   "h_px": 64
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 70,
+   "state": "spread",
+   "facing": "back",
+   "w_px": 96,
+   "h_px": 69
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 70,
+   "state": "spread",
+   "facing": "three_quarter",
+   "w_px": 68,
+   "h_px": 68
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 70,
+   "state": "spread_lowered",
+   "facing": "back",
+   "w_px": 96,
+   "h_px": 51
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 90,
+   "state": "none",
+   "facing": "front",
+   "w_px": 20,
+   "h_px": 35
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 90,
+   "state": "folded",
+   "facing": "front",
+   "w_px": 28,
+   "h_px": 45
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 90,
+   "state": "folded",
+   "facing": "back",
+   "w_px": 30,
+   "h_px": 45
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 90,
+   "state": "folded",
+   "facing": "side",
+   "w_px": 22,
+   "h_px": 45
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 90,
+   "state": "spread",
+   "facing": "back",
+   "w_px": 68,
+   "h_px": 49
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 90,
+   "state": "spread",
+   "facing": "three_quarter",
+   "w_px": 47,
+   "h_px": 48
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 90,
+   "state": "spread_lowered",
+   "facing": "back",
+   "w_px": 66,
+   "h_px": 36
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 110,
+   "state": "none",
+   "facing": "front",
+   "w_px": 14,
+   "h_px": 25
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 110,
+   "state": "folded",
+   "facing": "front",
+   "w_px": 20,
+   "h_px": 31
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 110,
+   "state": "folded",
+   "facing": "back",
+   "w_px": 20,
+   "h_px": 32
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 110,
+   "state": "folded",
+   "facing": "side",
+   "w_px": 15,
+   "h_px": 32
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 110,
+   "state": "spread",
+   "facing": "back",
+   "w_px": 46,
+   "h_px": 34
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 110,
+   "state": "spread",
+   "facing": "three_quarter",
+   "w_px": 33,
+   "h_px": 34
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 110,
+   "state": "spread_lowered",
+   "facing": "back",
+   "w_px": 46,
+   "h_px": 25
+  },
+  {
+   "res": [
+    2560,
+    1440
+   ],
+   "fov": 90,
+   "state": "none",
+   "facing": "front",
+   "w_px": 26,
+   "h_px": 46
+  },
+  {
+   "res": [
+    2560,
+    1440
+   ],
+   "fov": 90,
+   "state": "folded",
+   "facing": "front",
+   "w_px": 38,
+   "h_px": 59
+  },
+  {
+   "res": [
+    2560,
+    1440
+   ],
+   "fov": 90,
+   "state": "folded",
+   "facing": "back",
+   "w_px": 40,
+   "h_px": 60
+  },
+  {
+   "res": [
+    2560,
+    1440
+   ],
+   "fov": 90,
+   "state": "folded",
+   "facing": "side",
+   "w_px": 29,
+   "h_px": 60
+  },
+  {
+   "res": [
+    2560,
+    1440
+   ],
+   "fov": 90,
+   "state": "spread",
+   "facing": "back",
+   "w_px": 90,
+   "h_px": 64
+  },
+  {
+   "res": [
+    2560,
+    1440
+   ],
+   "fov": 90,
+   "state": "spread",
+   "facing": "three_quarter",
+   "w_px": 62,
+   "h_px": 64
+  },
+  {
+   "res": [
+    2560,
+    1440
+   ],
+   "fov": 90,
+   "state": "spread_lowered",
+   "facing": "back",
+   "w_px": 90,
+   "h_px": 47
+  }
+ ],
+ "value_key": {
+  "folded_front": {
+   "bronze": 0.655,
+   "brass": 0.335,
+   "ivory_amber": 0.01
+  },
+  "folded_back": {
+   "bronze": 0.616,
+   "brass": 0.261,
+   "ivory_amber": 0.124
+  },
+  "folded_three_quarter_back": {
+   "bronze": 0.709,
+   "brass": 0.208,
+   "ivory_amber": 0.083
+  },
+  "spread_front": {
+   "bronze": 0.649,
+   "brass": 0.344,
+   "ivory_amber": 0.008
+  },
+  "spread_back": {
+   "bronze": 0.579,
+   "brass": 0.291,
+   "ivory_amber": 0.13
+  },
+  "spread_three_quarter_back": {
+   "bronze": 0.634,
+   "brass": 0.255,
+   "ivory_amber": 0.111
+  },
+  "spread_lowered_front": {
+   "bronze": 0.656,
+   "brass": 0.336,
+   "ivory_amber": 0.008
+  },
+  "spread_lowered_back": {
+   "bronze": 0.583,
+   "brass": 0.285,
+   "ivory_amber": 0.132
+  },
+  "spread_lowered_three_quarter_back": {
+   "bronze": 0.625,
+   "brass": 0.26,
+   "ivory_amber": 0.114
+  }
+ }
+}

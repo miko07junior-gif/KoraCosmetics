@@ -1,0 +1,401 @@
+{
+ "args": {
+  "rare": false,
+  "cape": false,
+  "slim": false,
+  "no_armor": false,
+  "step": 15,
+  "out": "/home/user/KoraCosmetics/clockwork-regent/renders/checks/clip_common.json",
+  "quick": false
+ },
+ "poses": 718,
+ "states": [
+  {
+   "state": "folded",
+   "clips": 5,
+   "min_clearance": -5.34,
+   "worst": [
+    {
+     "player": "head:helmet",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 5.34
+    },
+    {
+     "player": "head:hat_layer",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 4.84
+    },
+    {
+     "player": "head:head",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 4.34
+    },
+    {
+     "player": "right_arm:right_pauldron",
+     "rig": "forearm_r:voussoir",
+     "pose": "bow look -90/50",
+     "depth": 0.86
+    },
+    {
+     "player": "left_arm:left_pauldron",
+     "rig": "shoulder_l:shoulder_joint",
+     "pose": "bow look -45/-50",
+     "depth": 0.09
+    }
+   ],
+   "nearest": {
+    "rig": "shoulder_r:shoulder_joint",
+    "pose": "look -75/-15 sneak"
+   }
+  },
+  {
+   "state": "arch_splits",
+   "clips": 5,
+   "min_clearance": -5.34,
+   "worst": [
+    {
+     "player": "head:helmet",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 5.34
+    },
+    {
+     "player": "head:hat_layer",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 4.84
+    },
+    {
+     "player": "head:head",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 4.34
+    },
+    {
+     "player": "right_arm:right_pauldron",
+     "rig": "forearm_r:voussoir",
+     "pose": "bow look -90/50",
+     "depth": 0.83
+    },
+    {
+     "player": "left_arm:left_pauldron",
+     "rig": "shoulder_l:shoulder_joint",
+     "pose": "bow look 45/-50",
+     "depth": 0.08
+    }
+   ],
+   "nearest": {
+    "rig": "shoulder_r:shoulder_joint",
+    "pose": "look -75/-15 sneak"
+   }
+  },
+  {
+   "state": "coverts_rise",
+   "clips": 5,
+   "min_clearance": -5.34,
+   "worst": [
+    {
+     "player": "head:helmet",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 5.34
+    },
+    {
+     "player": "head:hat_layer",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 4.84
+    },
+    {
+     "player": "head:head",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 4.34
+    },
+    {
+     "player": "right_arm:right_pauldron",
+     "rig": "shoulder_r:elbow_knuckle",
+     "pose": "bow look -90/50",
+     "depth": 0.63
+    },
+    {
+     "player": "left_arm:left_pauldron",
+     "rig": "shoulder_l:shoulder_joint",
+     "pose": "bow look 45/-50",
+     "depth": 0.08
+    }
+   ],
+   "nearest": {
+    "rig": "shoulder_r:shoulder_joint",
+    "pose": "look -75/-15 sneak"
+   }
+  },
+  {
+   "state": "secondaries_rise",
+   "clips": 5,
+   "min_clearance": -5.34,
+   "worst": [
+    {
+     "player": "head:helmet",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 5.34
+    },
+    {
+     "player": "head:hat_layer",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 4.84
+    },
+    {
+     "player": "head:head",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 4.34
+    },
+    {
+     "player": "right_arm:right_pauldron",
+     "rig": "shoulder_r:elbow_knuckle",
+     "pose": "bow look -90/50",
+     "depth": 0.32
+    },
+    {
+     "player": "left_arm:left_pauldron",
+     "rig": "shoulder_l:shoulder_joint",
+     "pose": "bow look -45/-50",
+     "depth": 0.08
+    }
+   ],
+   "nearest": {
+    "rig": "shoulder_r:shoulder_joint",
+    "pose": "look -75/-15 sneak"
+   }
+  },
+  {
+   "state": "primaries_fan",
+   "clips": 5,
+   "min_clearance": -5.34,
+   "worst": [
+    {
+     "player": "head:helmet",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 5.34
+    },
+    {
+     "player": "head:hat_layer",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 4.84
+    },
+    {
+     "player": "head:head",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 4.34
+    },
+    {
+     "player": "right_arm:right_pauldron",
+     "rig": "shoulder_r:elbow_knuckle",
+     "pose": "bow look -90/50",
+     "depth": 0.32
+    },
+    {
+     "player": "left_arm:left_pauldron",
+     "rig": "shoulder_l:shoulder_joint",
+     "pose": "bow look -45/-50",
+     "depth": 0.08
+    }
+   ],
+   "nearest": {
+    "rig": "shoulder_r:shoulder_joint",
+    "pose": "look -75/-15 sneak"
+   }
+  },
+  {
+   "state": "spread",
+   "clips": 5,
+   "min_clearance": -5.34,
+   "worst": [
+    {
+     "player": "head:helmet",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 5.34
+    },
+    {
+     "player": "head:hat_layer",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 4.84
+    },
+    {
+     "player": "head:head",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 4.34
+    },
+    {
+     "player": "right_arm:right_pauldron",
+     "rig": "shoulder_r:elbow_knuckle",
+     "pose": "bow look -90/50",
+     "depth": 0.32
+    },
+    {
+     "player": "left_arm:left_pauldron",
+     "rig": "shoulder_l:shoulder_joint",
+     "pose": "bow look -45/-50",
+     "depth": 0.08
+    }
+   ],
+   "nearest": {
+    "rig": "shoulder_r:shoulder_joint",
+    "pose": "look -75/-15 sneak"
+   }
+  },
+  {
+   "state": "unfold_25",
+   "clips": 5,
+   "min_clearance": -5.34,
+   "worst": [
+    {
+     "player": "head:helmet",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 5.34
+    },
+    {
+     "player": "head:hat_layer",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 4.84
+    },
+    {
+     "player": "head:head",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 4.34
+    },
+    {
+     "player": "right_arm:right_pauldron",
+     "rig": "forearm_r:voussoir",
+     "pose": "bow look -90/50",
+     "depth": 0.84
+    },
+    {
+     "player": "left_arm:left_pauldron",
+     "rig": "shoulder_l:shoulder_joint",
+     "pose": "bow look -45/-50",
+     "depth": 0.08
+    }
+   ],
+   "nearest": {
+    "rig": "shoulder_r:shoulder_joint",
+    "pose": "look -75/-15 sneak"
+   }
+  },
+  {
+   "state": "unfold_50",
+   "clips": 5,
+   "min_clearance": -5.34,
+   "worst": [
+    {
+     "player": "head:helmet",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 5.34
+    },
+    {
+     "player": "head:hat_layer",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 4.84
+    },
+    {
+     "player": "head:head",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 4.34
+    },
+    {
+     "player": "right_arm:right_pauldron",
+     "rig": "shoulder_r:elbow_knuckle",
+     "pose": "bow look -90/50",
+     "depth": 0.77
+    },
+    {
+     "player": "left_arm:left_pauldron",
+     "rig": "shoulder_l:shoulder_joint",
+     "pose": "bow look -45/-50",
+     "depth": 0.08
+    }
+   ],
+   "nearest": {
+    "rig": "shoulder_r:shoulder_joint",
+    "pose": "look -75/-15 sneak"
+   }
+  },
+  {
+   "state": "unfold_75",
+   "clips": 5,
+   "min_clearance": -5.34,
+   "worst": [
+    {
+     "player": "head:helmet",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 5.34
+    },
+    {
+     "player": "head:hat_layer",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 4.84
+    },
+    {
+     "player": "head:head",
+     "rig": "shoulder_r:shoulder_joint",
+     "pose": "look -75/-15 sneak",
+     "depth": 4.34
+    },
+    {
+     "player": "right_arm:right_pauldron",
+     "rig": "shoulder_r:elbow_knuckle",
+     "pose": "bow look -90/50",
+     "depth": 0.58
+    },
+    {
+     "player": "left_arm:left_pauldron",
+     "rig": "shoulder_l:shoulder_joint",
+     "pose": "bow look 45/-50",
+     "depth": 0.08
+    }
+   ],
+   "nearest": {
+    "rig": "shoulder_r:shoulder_joint",
+    "pose": "look -75/-15 sneak"
+   }
+  }
+ ],
+ "pistons": [
+  {
+   "piston": "humerus_piston_r_cyl",
+   "L_min": 7.62,
+   "L_max": 7.74,
+   "overlap_min": 1.55,
+   "rod_base_min": 2.97,
+   "ok": true
+  },
+  {
+   "piston": "humerus_piston_l_cyl",
+   "L_min": 7.62,
+   "L_max": 7.74,
+   "overlap_min": 1.55,
+   "rod_base_min": 2.97,
+   "ok": true
+  }
+ ]
+}

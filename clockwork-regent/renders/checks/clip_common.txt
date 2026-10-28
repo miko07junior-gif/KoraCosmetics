@@ -1,0 +1,10 @@
+folded                 clips=0   min_clearance=   0.0  nearest=heart:heart_case @ look -90/-60 sneak
+unfold_25              clips=0   min_clearance=   0.0  nearest=heart:heart_case @ look -90/-60 sneak
+unfold_50              clips=0   min_clearance=   0.0  nearest=heart:heart_case @ look -90/-60 sneak
+unfold_75              clips=0   min_clearance=   0.0  nearest=heart:heart_case @ look -90/-60 sneak
+spread                 clips=0   min_clearance=   0.0  nearest=heart:heart_case @ look -90/-60 sneak
+stagger_coverts        clips=0   min_clearance=   0.0  nearest=heart:heart_case @ look -90/-60 sneak
+stagger_secondaries    clips=0   min_clearance=   0.0  nearest=heart:heart_case @ look -90/-60 sneak
+stagger_primaries      clips=0   min_clearance=   0.0  nearest=heart:heart_case @ look -90/-60 sneak
+spread_lowered_alt     clips=0   min_clearance=   0.0  nearest=heart:heart_case @ look -90/-60 sneak
+pistons: [{'piston': 'piston_r_humerus', 'L_min': 6.73, 'L_max': 7.33, 'limits': (6.0, 9.0), 'ok': True}, {'piston': 'piston_r_primaries', 'L_min': 6.61, 'L_max': 9.49, 'limits': (6.0, 10.0), 'ok': True}, {'piston': 'piston_l_humerus', 'L_min': 6.73, 'L_max': 7.33, 'limits': (6.0, 9.0), 'ok': True}, {'piston': 'piston_l_primaries', 'L_min': 6.61, 'L_max': 9.49, 'limits': (6.0, 10.0), 'ok': True}]

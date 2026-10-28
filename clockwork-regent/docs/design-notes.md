@@ -135,7 +135,35 @@ the options are:
 
 ## 7. Clipping summary
 
-(Filled from `../renders/checks/` once the full run finishes.)
+Wing states checked:
+- folded;
+- unfold at 25 / 50 / 75%;
+- spread;
+- the three staggered tier keys;
+- the rejected lowered spread.
+
+Run with `clipcheck.py`; results are in `../renders/checks/`.
+
+| Run | Poses | Result |
+|---|---|---|
+| Common (look every 15 deg, sprint 32 phases x 3 idle-sway ages, sneak, attack, item poses; classic arms, full armor) | 718 | **0 clips** in all 9 states |
+| Rare (adds the overhead trident throw), look every 30 deg | 532 | **0 clips** |
+| Slim arms, no armor, look every 30 deg | 516 | **0 clips** |
+| Vanilla cape worn (folded + spread; motion poses, level look, 12 cape angles) | - | pending: run in progress |
+
+The closest contacts that aren't vanilla-excused:
+- closed primaries vs a sprinting pauldron, 0.25 px or more since the 11.5 standoff;
+- the heart vs the chestplate, 0.25 px by design;
+- the heart vs the attack-swing pauldron, 0.14 px.
+
+Pistons stay inside their travel in every layout:
+- humerus pistons: L 6.73-7.33 within 6.0-9.0;
+- primaries pistons: L 6.61-9.49 within 6.0-10.0.
+
+The SAT gap is a lower bound on true separation, so these clearances are conservative.
+Pose sampling is discrete, so a contact thinner than the sampling step can still hide
+between samples. That is why the standoff went from 11 to 11.5 after a finer sprint
+sweep turned up a 0.02 px clip.
 
 ## 8. Open risks for the step 2 gates
 

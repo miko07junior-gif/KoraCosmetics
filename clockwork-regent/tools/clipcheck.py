@@ -80,10 +80,15 @@ def main(argv=None):
     ap.add_argument("--no-armor", action="store_true")
     ap.add_argument("--step", type=int, default=15)
     ap.add_argument("--out", default="")
+    ap.add_argument("--quick", action="store_true", help="folded + spread only, motion poses and level look")
     a = ap.parse_args(argv)
     bones = rig.build()
     poses = player.envelope(include_rare=a.rare, step=a.step)
-    res = check(bones, poses, armor=not a.no_armor, slim=a.slim, cape=a.cape)
+    states = STATES
+    if a.quick:
+        poses = [p for p in poses if p.category != "look" or abs(p.head_pitch) < 1e-6]
+        states = {k: STATES[k] for k in ("folded", "spread")}
+    res = check(bones, poses, armor=not a.no_armor, slim=a.slim, cape=a.cape, states=states)
     rows = summarise(res)
     for r in rows:
         print(f"{r['state']:<22} clips={r['clips']:<3} min_clearance={r['min_clearance']:>6}  nearest={r['nearest']['rig']} @ {r['nearest']['pose']}")

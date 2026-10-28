@@ -1,0 +1,145 @@
+{
+ "args": {
+  "rare": false,
+  "cape": false,
+  "slim": false,
+  "no_armor": false,
+  "step": 15,
+  "out": "../renders/checks/clip_common.json"
+ },
+ "poses": 718,
+ "states": [
+  {
+   "state": "folded",
+   "clips": 0,
+   "min_clearance": 0.0,
+   "worst": [],
+   "nearest": {
+    "rig": "heart:heart_case",
+    "pose": "look -90/-60 sneak"
+   }
+  },
+  {
+   "state": "unfold_25",
+   "clips": 0,
+   "min_clearance": 0.0,
+   "worst": [],
+   "nearest": {
+    "rig": "heart:heart_case",
+    "pose": "look -90/-60 sneak"
+   }
+  },
+  {
+   "state": "unfold_50",
+   "clips": 0,
+   "min_clearance": 0.0,
+   "worst": [],
+   "nearest": {
+    "rig": "heart:heart_case",
+    "pose": "look -90/-60 sneak"
+   }
+  },
+  {
+   "state": "unfold_75",
+   "clips": 0,
+   "min_clearance": 0.0,
+   "worst": [],
+   "nearest": {
+    "rig": "heart:heart_case",
+    "pose": "look -90/-60 sneak"
+   }
+  },
+  {
+   "state": "spread",
+   "clips": 0,
+   "min_clearance": 0.0,
+   "worst": [],
+   "nearest": {
+    "rig": "heart:heart_case",
+    "pose": "look -90/-60 sneak"
+   }
+  },
+  {
+   "state": "stagger_coverts",
+   "clips": 0,
+   "min_clearance": 0.0,
+   "worst": [],
+   "nearest": {
+    "rig": "heart:heart_case",
+    "pose": "look -90/-60 sneak"
+   }
+  },
+  {
+   "state": "stagger_secondaries",
+   "clips": 0,
+   "min_clearance": 0.0,
+   "worst": [],
+   "nearest": {
+    "rig": "heart:heart_case",
+    "pose": "look -90/-60 sneak"
+   }
+  },
+  {
+   "state": "stagger_primaries",
+   "clips": 0,
+   "min_clearance": 0.0,
+   "worst": [],
+   "nearest": {
+    "rig": "heart:heart_case",
+    "pose": "look -90/-60 sneak"
+   }
+  },
+  {
+   "state": "spread_lowered_alt",
+   "clips": 0,
+   "min_clearance": 0.0,
+   "worst": [],
+   "nearest": {
+    "rig": "heart:heart_case",
+    "pose": "look -90/-60 sneak"
+   }
+  }
+ ],
+ "pistons": [
+  {
+   "piston": "piston_r_humerus",
+   "L_min": 6.73,
+   "L_max": 7.33,
+   "limits": [
+    6.0,
+    9.0
+   ],
+   "ok": true
+  },
+  {
+   "piston": "piston_r_primaries",
+   "L_min": 6.61,
+   "L_max": 9.49,
+   "limits": [
+    6.0,
+    10.0
+   ],
+   "ok": true
+  },
+  {
+   "piston": "piston_l_humerus",
+   "L_min": 6.73,
+   "L_max": 7.33,
+   "limits": [
+    6.0,
+    9.0
+   ],
+   "ok": true
+  },
+  {
+   "piston": "piston_l_primaries",
+   "L_min": 6.61,
+   "L_max": 9.49,
+   "limits": [
+    6.0,
+    10.0
+   ],
+   "ok": true
+  }
+ ]
+}

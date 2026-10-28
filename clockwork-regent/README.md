@@ -31,7 +31,7 @@ Python 3 with numpy and Pillow. Run from `tools/`:
 | Script | Does |
 |---|---|
 | `make_step1.py` | Silhouettes at icon size and at 30 blocks (true screen pixels), notan, value key with measured area shares |
-| `clipcheck.py [--rare] [--cape] [--slim] [--no-armor]` | Every rig cube vs every player cube over the vanilla pose envelope, for every wing state. Exits non-zero on any clip. |
+| `clipcheck.py [--rare] [--cape] [--slim] [--no-armor] [--quick]` | Every rig cube vs every player cube over the vanilla pose envelope, for every wing state. Exits non-zero on any clip. The full common run takes about 25 min; `--quick` checks folded and spread only. |
 | `f5check.py` | How much of the wearer's own F5 view the cosmetic covers |
 | `export_graybox.py` | Writes `design/regent_graybox.json`, the hand-off to Kora's format |
 

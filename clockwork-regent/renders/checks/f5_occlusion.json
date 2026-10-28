@@ -7,9 +7,9 @@
   ],
   "fov": 70,
   "pitch": -30,
-  "screen": 0.0392,
-  "centre_third": 0.2432,
-  "crosshair": 0.0
+  "screen": 0.0067,
+  "centre_third": 0.0601,
+  "crosshair": 0.0305
  },
  {
   "state": "folded",
@@ -19,9 +19,9 @@
   ],
   "fov": 70,
   "pitch": 0,
-  "screen": 0.034,
-  "centre_third": 0.2051,
-  "crosshair": 0.0
+  "screen": 0.0083,
+  "centre_third": 0.0749,
+  "crosshair": 0.0274
  },
  {
   "state": "folded",
@@ -31,9 +31,9 @@
   ],
   "fov": 70,
   "pitch": 30,
-  "screen": 0.0237,
-  "centre_third": 0.1519,
-  "crosshair": 0.0087
+  "screen": 0.0067,
+  "centre_third": 0.0599,
+  "crosshair": 0.0568
  },
  {
   "state": "spread",
@@ -43,9 +43,9 @@
   ],
   "fov": 70,
   "pitch": -30,
-  "screen": 0.064,
-  "centre_third": 0.3747,
-  "crosshair": 0.0
+  "screen": 0.0232,
+  "centre_third": 0.2083,
+  "crosshair": 0.0281
  },
  {
   "state": "spread",
@@ -55,9 +55,9 @@
   ],
   "fov": 70,
   "pitch": 0,
-  "screen": 0.0743,
-  "centre_third": 0.4716,
-  "crosshair": 0.0
+  "screen": 0.0285,
+  "centre_third": 0.2567,
+  "crosshair": 0.0153
  },
  {
   "state": "spread",
@@ -67,44 +67,8 @@
   ],
   "fov": 70,
   "pitch": 30,
-  "screen": 0.0675,
-  "centre_third": 0.4599,
-  "crosshair": 0.0
- },
- {
-  "state": "spread_lowered",
-  "res": [
-   1920,
-   1080
-  ],
-  "fov": 70,
-  "pitch": -30,
-  "screen": 0.0877,
-  "centre_third": 0.4636,
-  "crosshair": 0.0
- },
- {
-  "state": "spread_lowered",
-  "res": [
-   1920,
-   1080
-  ],
-  "fov": 70,
-  "pitch": 0,
-  "screen": 0.0754,
-  "centre_third": 0.3272,
-  "crosshair": 0.0
- },
- {
-  "state": "spread_lowered",
-  "res": [
-   1920,
-   1080
-  ],
-  "fov": 70,
-  "pitch": 30,
-  "screen": 0.0552,
-  "centre_third": 0.2281,
+  "screen": 0.0258,
+  "centre_third": 0.2321,
   "crosshair": 0.0
  },
  {
@@ -115,9 +79,9 @@
   ],
   "fov": 90,
   "pitch": -30,
-  "screen": 0.0192,
-  "centre_third": 0.1614,
-  "crosshair": 0.1058
+  "screen": 0.0033,
+  "centre_third": 0.0293,
+  "crosshair": 0.0983
  },
  {
   "state": "folded",
@@ -127,9 +91,9 @@
   ],
   "fov": 90,
   "pitch": 0,
-  "screen": 0.0167,
-  "centre_third": 0.1227,
-  "crosshair": 0.0
+  "screen": 0.0041,
+  "centre_third": 0.0365,
+  "crosshair": 0.1715
  },
  {
   "state": "folded",
@@ -139,9 +103,9 @@
   ],
   "fov": 90,
   "pitch": 30,
-  "screen": 0.0116,
-  "centre_third": 0.0919,
-  "crosshair": 0.2059
+  "screen": 0.0032,
+  "centre_third": 0.0291,
+  "crosshair": 0.2587
  },
  {
   "state": "spread",
@@ -151,9 +115,9 @@
   ],
   "fov": 90,
   "pitch": -30,
-  "screen": 0.0314,
-  "centre_third": 0.2821,
-  "crosshair": 0.1055
+  "screen": 0.0113,
+  "centre_third": 0.102,
+  "crosshair": 0.0727
  },
  {
   "state": "spread",
@@ -163,9 +127,9 @@
   ],
   "fov": 90,
   "pitch": 0,
-  "screen": 0.0364,
-  "centre_third": 0.3278,
-  "crosshair": 0.0
+  "screen": 0.014,
+  "centre_third": 0.1257,
+  "crosshair": 0.0523
  },
  {
   "state": "spread",
@@ -175,45 +139,9 @@
   ],
   "fov": 90,
   "pitch": 30,
-  "screen": 0.0331,
-  "centre_third": 0.2979,
-  "crosshair": 0.0
- },
- {
-  "state": "spread_lowered",
-  "res": [
-   1920,
-   1080
-  ],
-  "fov": 90,
-  "pitch": -30,
-  "screen": 0.043,
-  "centre_third": 0.3859,
-  "crosshair": 0.1073
- },
- {
-  "state": "spread_lowered",
-  "res": [
-   1920,
-   1080
-  ],
-  "fov": 90,
-  "pitch": 0,
-  "screen": 0.0369,
-  "centre_third": 0.3029,
-  "crosshair": 0.0
- },
- {
-  "state": "spread_lowered",
-  "res": [
-   1920,
-   1080
-  ],
-  "fov": 90,
-  "pitch": 30,
-  "screen": 0.0271,
-  "centre_third": 0.2292,
-  "crosshair": 0.0
+  "screen": 0.0126,
+  "centre_third": 0.1138,
+  "crosshair": 0.0007
  },
  {
   "state": "folded",
@@ -223,9 +151,9 @@
   ],
   "fov": 110,
   "pitch": -30,
-  "screen": 0.0094,
-  "centre_third": 0.085,
-  "crosshair": 0.1734
+  "screen": 0.0016,
+  "centre_third": 0.0144,
+  "crosshair": 0.1871
  },
  {
   "state": "folded",
@@ -235,9 +163,9 @@
   ],
   "fov": 110,
   "pitch": 0,
-  "screen": 0.0082,
-  "centre_third": 0.0737,
-  "crosshair": 0.137
+  "screen": 0.002,
+  "centre_third": 0.018,
+  "crosshair": 0.2747
  },
  {
   "state": "folded",
@@ -247,9 +175,9 @@
   ],
   "fov": 110,
   "pitch": 30,
-  "screen": 0.0057,
-  "centre_third": 0.0511,
-  "crosshair": 0.2665
+  "screen": 0.0016,
+  "centre_third": 0.0143,
+  "crosshair": 0.2714
  },
  {
   "state": "spread",
@@ -259,9 +187,9 @@
   ],
   "fov": 110,
   "pitch": -30,
-  "screen": 0.0154,
-  "centre_third": 0.1386,
-  "crosshair": 0.1511
+  "screen": 0.0056,
+  "centre_third": 0.0501,
+  "crosshair": 0.0993
  },
  {
   "state": "spread",
@@ -271,9 +199,9 @@
   ],
   "fov": 110,
   "pitch": 0,
-  "screen": 0.0179,
-  "centre_third": 0.1607,
-  "crosshair": 0.0297
+  "screen": 0.0069,
+  "centre_third": 0.0617,
+  "crosshair": 0.0808
  },
  {
   "state": "spread",
@@ -283,44 +211,8 @@
   ],
   "fov": 110,
   "pitch": 30,
-  "screen": 0.0162,
-  "centre_third": 0.146,
-  "crosshair": 0.0065
- },
- {
-  "state": "spread_lowered",
-  "res": [
-   1920,
-   1080
-  ],
-  "fov": 110,
-  "pitch": -30,
-  "screen": 0.0211,
-  "centre_third": 0.19,
-  "crosshair": 0.1521
- },
- {
-  "state": "spread_lowered",
-  "res": [
-   1920,
-   1080
-  ],
-  "fov": 110,
-  "pitch": 0,
-  "screen": 0.0181,
-  "centre_third": 0.163,
-  "crosshair": 0.0286
- },
- {
-  "state": "spread_lowered",
-  "res": [
-   1920,
-   1080
-  ],
-  "fov": 110,
-  "pitch": 30,
-  "screen": 0.0133,
-  "centre_third": 0.1195,
-  "crosshair": 0.0024
+  "screen": 0.0062,
+  "centre_third": 0.0557,
+  "crosshair": 0.0432
  }
 ]

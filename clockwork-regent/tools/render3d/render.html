@@ -25,7 +25,7 @@ window.renderView = async (o) => {
   scene.background = new THREE.Color(o.bg || '#3a3a3a');
   const pmrem = new THREE.PMREMGenerator(renderer);
   scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
-  scene.environmentIntensity = o.night ? 0.1 : 0.75;
+  const envI = o.night ? 0.05 : 0.75;   // three r160 has no scene.environmentIntensity; set it per material below
   // Even light from front and back, no cast shadows.
   scene.add(new THREE.HemisphereLight(0xffffff, 0x404040, o.night ? 0.06 : 0.55));
   for (const [x, y, z, i] of [[3, 4, 5, 0.9], [-3, 4, -5, 0.9], [-5, 2, 3, 0.45], [5, 2, -3, 0.45], [0, 6, 0, 0.35]]) {
@@ -34,6 +34,7 @@ window.renderView = async (o) => {
     scene.add(d);
   }
   const gltf = await new GLTFLoader().loadAsync(o.glb);
+  gltf.scene.traverse(m => { if (m.isMesh) m.material.envMapIntensity = envI; });
   scene.add(gltf.scene);
   if (o.clip) {
     const mixer = new THREE.AnimationMixer(gltf.scene);

@@ -1,0 +1,239 @@
+{
+ "args": {
+  "rare": false,
+  "cape": false,
+  "slim": true,
+  "no_armor": true,
+  "step": 30,
+  "out": "/home/user/KoraCosmetics/clockwork-regent/renders/checks/clip_slim_noarmor.json",
+  "quick": false
+ },
+ "poses": 516,
+ "states": [
+  {
+   "state": "folded",
+   "clips": 2,
+   "min_clearance": -4.35,
+   "worst": [
+    {
+     "player": "head:hat_layer",
+     "rig": "shoulder_l:humerus_root",
+     "pose": "attack swing 0.95 look -60",
+     "depth": 4.35
+    },
+    {
+     "player": "head:head",
+     "rig": "shoulder_l:humerus_root",
+     "pose": "attack swing 0.95 look -60",
+     "depth": 3.85
+    }
+   ],
+   "nearest": {
+    "rig": "shoulder_l:humerus_root",
+    "pose": "attack swing 0.95 look -60"
+   }
+  },
+  {
+   "state": "arch_splits",
+   "clips": 2,
+   "min_clearance": -4.35,
+   "worst": [
+    {
+     "player": "head:hat_layer",
+     "rig": "shoulder_l:humerus_root",
+     "pose": "attack swing 0.95 look -60",
+     "depth": 4.35
+    },
+    {
+     "player": "head:head",
+     "rig": "shoulder_l:humerus_root",
+     "pose": "attack swing 0.95 look -60",
+     "depth": 3.85
+    }
+   ],
+   "nearest": {
+    "rig": "shoulder_l:humerus_root",
+    "pose": "attack swing 0.95 look -60"
+   }
+  },
+  {
+   "state": "coverts_rise",
+   "clips": 2,
+   "min_clearance": -4.35,
+   "worst": [
+    {
+     "player": "head:hat_layer",
+     "rig": "shoulder_l:humerus_root",
+     "pose": "attack swing 0.95 look -60",
+     "depth": 4.35
+    },
+    {
+     "player": "head:head",
+     "rig": "shoulder_l:humerus_root",
+     "pose": "attack swing 0.95 look -60",
+     "depth": 3.85
+    }
+   ],
+   "nearest": {
+    "rig": "shoulder_l:humerus_root",
+    "pose": "attack swing 0.95 look -60"
+   }
+  },
+  {
+   "state": "secondaries_rise",
+   "clips": 2,
+   "min_clearance": -4.35,
+   "worst": [
+    {
+     "player": "head:hat_layer",
+     "rig": "shoulder_l:humerus_root",
+     "pose": "attack swing 0.95 look -60",
+     "depth": 4.35
+    },
+    {
+     "player": "head:head",
+     "rig": "shoulder_l:humerus_root",
+     "pose": "attack swing 0.95 look -60",
+     "depth": 3.85
+    }
+   ],
+   "nearest": {
+    "rig": "shoulder_l:humerus_root",
+    "pose": "attack swing 0.95 look -60"
+   }
+  },
+  {
+   "state": "primaries_fan",
+   "clips": 2,
+   "min_clearance": -4.35,
+   "worst": [
+    {
+     "player": "head:hat_layer",
+     "rig": "shoulder_l:humerus_root",
+     "pose": "attack swing 0.95 look -60",
+     "depth": 4.35
+    },
+    {
+     "player": "head:head",
+     "rig": "shoulder_l:humerus_root",
+     "pose": "attack swing 0.95 look -60",
+     "depth": 3.85
+    }
+   ],
+   "nearest": {
+    "rig": "shoulder_l:humerus_root",
+    "pose": "attack swing 0.95 look -60"
+   }
+  },
+  {
+   "state": "spread",
+   "clips": 2,
+   "min_clearance": -4.35,
+   "worst": [
+    {
+     "player": "head:hat_layer",
+     "rig": "shoulder_l:humerus_root",
+     "pose": "attack swing 0.95 look -60",
+     "depth": 4.35
+    },
+    {
+     "player": "head:head",
+     "rig": "shoulder_l:humerus_root",
+     "pose": "attack swing 0.95 look -60",
+     "depth": 3.85
+    }
+   ],
+   "nearest": {
+    "rig": "shoulder_l:humerus_root",
+    "pose": "attack swing 0.95 look -60"
+   }
+  },
+  {
+   "state": "unfold_25",
+   "clips": 2,
+   "min_clearance": -4.35,
+   "worst": [
+    {
+     "player": "head:hat_layer",
+     "rig": "shoulder_l:humerus_root",
+     "pose": "attack swing 0.95 look -60",
+     "depth": 4.35
+    },
+    {
+     "player": "head:head",
+     "rig": "shoulder_l:humerus_root",
+     "pose": "attack swing 0.95 look -60",
+     "depth": 3.85
+    }
+   ],
+   "nearest": {
+    "rig": "shoulder_l:humerus_root",
+    "pose": "attack swing 0.95 look -60"
+   }
+  },
+  {
+   "state": "unfold_50",
+   "clips": 2,
+   "min_clearance": -4.35,
+   "worst": [
+    {
+     "player": "head:hat_layer",
+     "rig": "shoulder_l:humerus_root",
+     "pose": "attack swing 0.95 look -60",
+     "depth": 4.35
+    },
+    {
+     "player": "head:head",
+     "rig": "shoulder_l:humerus_root",
+     "pose": "attack swing 0.95 look -60",
+     "depth": 3.85
+    }
+   ],
+   "nearest": {
+    "rig": "shoulder_l:humerus_root",
+    "pose": "attack swing 0.95 look -60"
+   }
+  },
+  {
+   "state": "unfold_75",
+   "clips": 2,
+   "min_clearance": -4.35,
+   "worst": [
+    {
+     "player": "head:hat_layer",
+     "rig": "shoulder_l:humerus_root",
+     "pose": "attack swing 0.95 look -60",
+     "depth": 4.35
+    },
+    {
+     "player": "head:head",
+     "rig": "shoulder_l:humerus_root",
+     "pose": "attack swing 0.95 look -60",
+     "depth": 3.85
+    }
+   ],
+   "nearest": {
+    "rig": "shoulder_l:humerus_root",
+    "pose": "attack swing 0.95 look -60"
+   }
+  }
+ ],
+ "pistons": [
+  {
+   "piston": "humerus_piston_r_cyl",
+   "L_min": 7.62,
+   "L_max": 7.74,
+   "overlap_min": 1.55,
+   "rod_base_min": 2.97,
+   "ok": true
+  },
+  {
+   "piston": "humerus_piston_l_cyl",
+   "L_min": 7.62,
+   "L_max": 7.74,
+   "overlap_min": 1.55,
+   "rod_base_min": 2.97,
+   "ok": true
+  }
+ ]
+}

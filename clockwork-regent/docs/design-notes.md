@@ -74,7 +74,48 @@ plays the same clips on the vanilla sneak pose.
 
 ## 6. Clipping, value key and F5
 
-(Being filled from `../renders/checks` and `../renders/step1` as the runs finish.)
+### Clipping
+
+CLIP_TABLE
+
+### Value key
+
+Share of the visible cosmetic, with the wearer in place (bronze / brass / ivory+amber).
+The target is 60 / 30 / 10.
+
+| | Folded | Spread |
+|---|---|---|
+| back | 55 / 29 / 17 | 71 / 19 / 10 |
+| 3/4 back | 58 / 28 / 14 | 71 / 20 / 9 |
+| front | 69 / 30 / 1 | 76 / 22 / 2 |
+
+- **Folded:** on target from behind.
+- **Spread:** bronze-heavy, because the blade plates dominate.
+- **Fix at painting:** brass bevels on the blade edges move about 10 points from bronze to brass, and ivory enamel on the front faces of the hub caps and coverts lifts the front views.
+
+### Size at 30 blocks
+
+In screen pixels, from `../renders/step1/step1_measurements.json`:
+
+| Screen | Bare player h | Folded w x h | Spread w x h |
+|---|---|---|---|
+| 1080p FOV 70 | 49 | 28 x 61 | 76 x 64 |
+| 1080p FOV 90 | 34 | 20 x 42 | 52 x 44 |
+| 1080p FOV 110 | 23 | 14 x 29 | 36 x 31 |
+
+### F5
+
+Share of the wearer's own third-person view that the wings cover beyond the player
+model, looking level (`../tools/f5check.py`):
+
+| | FOV 70 screen / centre third / crosshair box | FOV 110 |
+|---|---|---|
+| folded | 0.8% / 7.5% / 2.7% | 0.2% / 1.8% / 27% |
+| spread | 2.9% / 26% / 1.5% | 0.7% / 6.2% / 8.1% |
+
+- **Scale:** about a third of the first gray box's coverage (7.4% / 47%), because the wings now sit against the back.
+- **The crosshair point itself** is on the head and never covered.
+- **The crosshair box** is ±5% of screen height around it. At FOV 110 the player is small, so the arch over the head fills part of that box.
 
 ## 7. Open risks for the step 2 gates
 

@@ -275,12 +275,12 @@ def _build_wing(p, J):
     # Curved root: back first while still under the helmet's lower edge (y < 23), then up.
     M1 = S + np.array([0.5, 0.45, 1.0])
     M2 = S + np.array([1.1, 0.95, 1.8])
-    for a_, b_, w in ((S, M1, 1.55), (M1, M2, 1.55), (M2, K, 1.6)):
+    for a_, b_, w in ((S, M1, 1.4), (M1, M2, 1.35), (M2, K, 1.4)):
         d_ = (b_ - a_) / np.linalg.norm(b_ - a_)
         nrm = np.cross(d_, np.array([1.0, 0.0, 0.0]))
         sh.prims.append(bar(a_ - d_ * 0.25, b_ + d_ * 0.25, w, w, 1.2, nrm / np.linalg.norm(nrm), "bronze", 0.22, "humerus_root"))
     for q in (M1, M2):
-        sh.prims.append(disc(q, np.array([1.0, 0, 0]), 0.62, 1.7, 12, "brass", 0.1, "root_knuckle"))
+        sh.prims.append(disc(q, np.array([1.0, 0, 0]), 0.6, 1.2, 12, "brass", 0.1, "root_knuckle"))
     hy_ = (E - K) / np.linalg.norm(E - K)
     hx = np.cross(hy_, zf)
     sh.prims.append(bar(K - hy_ * 0.3, E, 1.95, 1.75, 1.4, zf, "bronze", 0.24, "humerus"))

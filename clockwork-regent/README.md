@@ -3,38 +3,53 @@
 Back-mounted folding wings for Kora Client: an ancient, long-dormant mechanical
 monarch. Target build Kora 0.13.0.
 
-- **Folded:** the leading edges rise into a gothic pointed arch around the wearer's head, a statue standing in a niche.
-- **Spread:** a rising art deco sunburst of three stepped brass tiers.
+- **Folded:** the leading edges close into a curved gothic arch around the head, with crockets and cusps, and the three feather tiers lie inside it like a portal's archivolts.
+- **Spread:** the tiers rise into an art deco sunburst, the primaries telescope out of their sheaths, and every seam lights from the escapement heart outward.
+
+**Viewer:** https://claude.ai/artifact/GrTkDEfamsbY9obZbGoKjz (private until you share it).
+Play dormant, wake, awake and sleep; switch stand or sneak, day or night; look from F5, 10 blocks and 30 blocks.
+
+## Decisions from the brief's owner (2026-10-28)
+
+| Question | Decision |
+|---|---|
+| Model resolution | High-resolution and intricate (bevelled plates, toothed gears, tapered stepped blades), not 1-px boxes |
+| Mount | Wings attach directly to the back: each shoulder joint sits flush in a plate on the shoulder blade. No standoff, no yoke, nothing tying the wings together |
+| Capes | Not taken into account |
+| Recoil | Follow the real mechanism: a simulated anchor escapement drives everything |
 
 ## Status
 
 | Brief step | State |
 |---|---|
-| Read Kora first | **Blocked.** The zip is on the Windows machine and this cloud session can't reach it. Checklist, developer questions and data requests: [docs/kora-intake.md](docs/kora-intake.md) |
-| 1. Notan and silhouette thumbnails | **Done, against vanilla stand-ins.** Icon sizes and screen settings are placeholders until Kora's preview size and player data are known. [renders/step1](renders/step1) |
-| 2. Gray box in Kora | **Prepared, not imported.** Format-neutral rig with hierarchy, fold, pistons and gears, clear of the vanilla pose envelope ([design/regent_graybox.json](design/regent_graybox.json)). Importing through Kora's pipeline needs the zip. The step 2 gates need Kora and players. |
-| 3-6. Full model, ortho views, callout sheet, captures | Not started. These come after the step 2 gates, as the brief orders. |
-| Timing from footage | Not started. Groundwork and measuring protocol: [docs/timing-research.md](docs/timing-research.md) |
+| Read Kora first | **Blocked.** The zip is on the Windows machine. See [docs/kora-intake.md](docs/kora-intake.md) |
+| 1. Notan and silhouette thumbnails | Redone for the high-resolution model: [renders/step1](renders/step1). Icon sizes and screen settings are still placeholders. |
+| 2. Gray box in Kora | Model, rig and clips exist as a GLB plus a format-neutral spec ([design](design)). Importing through Kora's pipeline needs the zip; the gates need Kora and players. |
+| 3. Full model | Geometry, rig, light path and all four clips done, with gray-box materials. Texture painting waits on Kora's texel-density range. |
+| 4. Ortho views | Shaded front, back, side and 3/4, folded and spread, on neutral dark grey with even light: [renders/model](renders/model). Paint-overs follow texturing. |
+| 5. Callout sheet | Inputs ready (spec, timing table, clearance numbers); the sheet itself comes after painting |
+| 6. In-game captures | Needs Kora |
+| Timing from footage | The escapement model stands in, with published geometry. Footage still has to be frame-stepped to tune it: [docs/timing-research.md](docs/timing-research.md) |
 
 Design rationale and every measured number: [docs/design-notes.md](docs/design-notes.md).
 
-## Decisions waiting on the brief's owner
-
-1. **Capes.** A vanilla cape sweeps exactly where the brief puts the bronze spine and heart, so "no clipping against a worn cape" is only possible if Kora hides or moves the cape when wings are worn. If Kora draws both with vanilla physics, the spine-on-the-back idea has to give. See design notes §3.
-2. **Recoil.** Early research suggests a real recoil escapement backs up slowly, over roughly half the beat, rather than kicking. Should the tick follow the real mechanism or the brief's "small kick back"? Footage settles what's real; the stylisation is a creative call.
-3. **F5.** Spread covers about 7% of the wearer's F5 screen and nearly half its centre third at 1080p FOV 70. The crosshair is never covered. Is "no blocking" measured against Kora's existing wings, or does it mean a fixed limit?
-
 ## Tools
 
-Python 3 with numpy and Pillow. Run from `tools/`:
+Python 3 with numpy and Pillow, plus Node with Playwright and three.js for shaded
+renders (`npm install three@0.160.0`, then set `THREE_DIR` or `SCRATCH`). Run from `tools/`.
 
 | Script | Does |
 |---|---|
-| `make_step1.py` | Silhouettes at icon size and at 30 blocks (true screen pixels), notan, value key with measured area shares |
-| `clipcheck.py [--rare] [--cape] [--slim] [--no-armor] [--quick]` | Every rig cube vs every player cube over the vanilla pose envelope, for every wing state. Exits non-zero on any clip. The full common run takes about 25 min; `--quick` checks folded and spread only. |
-| `f5check.py` | How much of the wearer's own F5 view the cosmetic covers |
-| `export_graybox.py` | Writes `design/regent_graybox.json`, the hand-off to Kora's format |
+| `regent.py` | The model: joints, pivots, hinge axes, geometry, poses |
+| `motion.py` | The escapement simulation and the clips built from it |
+| `export_model.py` | Writes `design/regent_rigged.glb`, `regent_spec.json`, `timing_wake.csv` |
+| `make_viewer.py OUT.html` | The interactive viewer page with the GLB inlined |
+| `render_views.py sheet\|unfold\|night OUT.png` | Shaded renders through three.js in headless Chromium |
+| `clipcheck.py [--rare] [--slim] [--no-armor] [--quick]` | Every model primitive vs the vanilla player over its pose envelope, every wing state |
+| `make_step1.py` | Silhouettes at icon size and at 30 blocks (true screen pixels), notan, value key |
+| `f5check.py` | How much of the wearer's own F5 view the wings cover |
 
-Shared modules: `geom.py` (frames, boxes, separating-axis test), `player.py` (vanilla
-player model and poses), `rig.py` (the gray box and its poses), `render.py` (a
-no-anti-aliasing rasteriser, like the game's), `scene.py`.
+Shared modules: `mesh.py` (bevelled extrusions, gears, blades, lancets), `geom.py`
+(frames, oriented boxes, separating-axis test), `player.py` (vanilla player model
+and poses), `render.py` (a no-anti-aliasing rasteriser, like the game's),
+`export_glb.py`, `scene.py`.

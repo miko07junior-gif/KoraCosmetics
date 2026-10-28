@@ -25,8 +25,8 @@
    "fov": 70,
    "state": "folded",
    "facing": "front",
-   "w_px": 28,
-   "h_px": 45
+   "w_px": 20,
+   "h_px": 43
   },
   {
    "res": [
@@ -36,8 +36,8 @@
    "fov": 70,
    "state": "folded",
    "facing": "back",
-   "w_px": 30,
-   "h_px": 46
+   "w_px": 20,
+   "h_px": 43
   },
   {
    "res": [
@@ -47,8 +47,8 @@
    "fov": 70,
    "state": "folded",
    "facing": "side",
-   "w_px": 23,
-   "h_px": 46
+   "w_px": 13,
+   "h_px": 44
   },
   {
    "res": [
@@ -58,8 +58,8 @@
    "fov": 70,
    "state": "spread",
    "facing": "back",
-   "w_px": 68,
-   "h_px": 49
+   "w_px": 54,
+   "h_px": 45
   },
   {
    "res": [
@@ -69,8 +69,8 @@
    "fov": 70,
    "state": "spread",
    "facing": "three_quarter",
-   "w_px": 48,
-   "h_px": 49
+   "w_px": 37,
+   "h_px": 45
   },
   {
    "res": [
@@ -78,10 +78,10 @@
     768
    ],
    "fov": 70,
-   "state": "spread_lowered",
-   "facing": "back",
-   "w_px": 68,
-   "h_px": 36
+   "state": "spread",
+   "facing": "front",
+   "w_px": 50,
+   "h_px": 45
   },
   {
    "res": [
@@ -102,7 +102,51 @@
    "fov": 70,
    "state": "folded",
    "facing": "front",
-   "w_px": 40,
+   "w_px": 28,
+   "h_px": 61
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 70,
+   "state": "folded",
+   "facing": "back",
+   "w_px": 28,
+   "h_px": 61
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 70,
+   "state": "folded",
+   "facing": "side",
+   "w_px": 19,
+   "h_px": 62
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 70,
+   "state": "spread",
+   "facing": "back",
+   "w_px": 76,
+   "h_px": 64
+  },
+  {
+   "res": [
+    1920,
+    1080
+   ],
+   "fov": 70,
+   "state": "spread",
+   "facing": "three_quarter",
+   "w_px": 54,
    "h_px": 63
   },
   {
@@ -111,54 +155,10 @@
     1080
    ],
    "fov": 70,
-   "state": "folded",
-   "facing": "back",
-   "w_px": 42,
-   "h_px": 64
-  },
-  {
-   "res": [
-    1920,
-    1080
-   ],
-   "fov": 70,
-   "state": "folded",
-   "facing": "side",
-   "w_px": 32,
-   "h_px": 64
-  },
-  {
-   "res": [
-    1920,
-    1080
-   ],
-   "fov": 70,
    "state": "spread",
-   "facing": "back",
-   "w_px": 96,
-   "h_px": 69
-  },
-  {
-   "res": [
-    1920,
-    1080
-   ],
-   "fov": 70,
-   "state": "spread",
-   "facing": "three_quarter",
-   "w_px": 68,
-   "h_px": 68
-  },
-  {
-   "res": [
-    1920,
-    1080
-   ],
-   "fov": 70,
-   "state": "spread_lowered",
-   "facing": "back",
-   "w_px": 96,
-   "h_px": 51
+   "facing": "front",
+   "w_px": 74,
+   "h_px": 63
   },
   {
    "res": [
@@ -168,8 +168,8 @@
    "fov": 90,
    "state": "none",
    "facing": "front",
-   "w_px": 20,
-   "h_px": 35
+   "w_px": 18,
+   "h_px": 34
   },
   {
    "res": [
@@ -179,8 +179,8 @@
    "fov": 90,
    "state": "folded",
    "facing": "front",
-   "w_px": 28,
-   "h_px": 45
+   "w_px": 20,
+   "h_px": 42
   },
   {
    "res": [
@@ -190,8 +190,8 @@
    "fov": 90,
    "state": "folded",
    "facing": "back",
-   "w_px": 30,
-   "h_px": 45
+   "w_px": 20,
+   "h_px": 42
   },
   {
    "res": [
@@ -201,8 +201,8 @@
    "fov": 90,
    "state": "folded",
    "facing": "side",
-   "w_px": 22,
-   "h_px": 45
+   "w_px": 13,
+   "h_px": 43
   },
   {
    "res": [
@@ -212,8 +212,8 @@
    "fov": 90,
    "state": "spread",
    "facing": "back",
-   "w_px": 68,
-   "h_px": 49
+   "w_px": 52,
+   "h_px": 44
   },
   {
    "res": [
@@ -223,8 +223,8 @@
    "fov": 90,
    "state": "spread",
    "facing": "three_quarter",
-   "w_px": 47,
-   "h_px": 48
+   "w_px": 36,
+   "h_px": 43
   },
   {
    "res": [
@@ -232,10 +232,10 @@
     1080
    ],
    "fov": 90,
-   "state": "spread_lowered",
-   "facing": "back",
-   "w_px": 66,
-   "h_px": 36
+   "state": "spread",
+   "facing": "front",
+   "w_px": 50,
+   "h_px": 44
   },
   {
    "res": [
@@ -246,7 +246,7 @@
    "state": "none",
    "facing": "front",
    "w_px": 14,
-   "h_px": 25
+   "h_px": 23
   },
   {
    "res": [
@@ -256,8 +256,8 @@
    "fov": 110,
    "state": "folded",
    "facing": "front",
-   "w_px": 20,
-   "h_px": 31
+   "w_px": 14,
+   "h_px": 29
   },
   {
    "res": [
@@ -267,8 +267,8 @@
    "fov": 110,
    "state": "folded",
    "facing": "back",
-   "w_px": 20,
-   "h_px": 32
+   "w_px": 14,
+   "h_px": 29
   },
   {
    "res": [
@@ -278,8 +278,8 @@
    "fov": 110,
    "state": "folded",
    "facing": "side",
-   "w_px": 15,
-   "h_px": 32
+   "w_px": 9,
+   "h_px": 31
   },
   {
    "res": [
@@ -289,8 +289,8 @@
    "fov": 110,
    "state": "spread",
    "facing": "back",
-   "w_px": 46,
-   "h_px": 34
+   "w_px": 36,
+   "h_px": 31
   },
   {
    "res": [
@@ -300,8 +300,8 @@
    "fov": 110,
    "state": "spread",
    "facing": "three_quarter",
-   "w_px": 33,
-   "h_px": 34
+   "w_px": 25,
+   "h_px": 31
   },
   {
    "res": [
@@ -309,10 +309,10 @@
     1080
    ],
    "fov": 110,
-   "state": "spread_lowered",
-   "facing": "back",
-   "w_px": 46,
-   "h_px": 25
+   "state": "spread",
+   "facing": "front",
+   "w_px": 36,
+   "h_px": 30
   },
   {
    "res": [
@@ -323,7 +323,7 @@
    "state": "none",
    "facing": "front",
    "w_px": 26,
-   "h_px": 46
+   "h_px": 45
   },
   {
    "res": [
@@ -333,8 +333,8 @@
    "fov": 90,
    "state": "folded",
    "facing": "front",
-   "w_px": 38,
-   "h_px": 59
+   "w_px": 26,
+   "h_px": 57
   },
   {
    "res": [
@@ -344,8 +344,8 @@
    "fov": 90,
    "state": "folded",
    "facing": "back",
-   "w_px": 40,
-   "h_px": 60
+   "w_px": 26,
+   "h_px": 57
   },
   {
    "res": [
@@ -355,8 +355,8 @@
    "fov": 90,
    "state": "folded",
    "facing": "side",
-   "w_px": 29,
-   "h_px": 60
+   "w_px": 18,
+   "h_px": 58
   },
   {
    "res": [
@@ -366,8 +366,8 @@
    "fov": 90,
    "state": "spread",
    "facing": "back",
-   "w_px": 90,
-   "h_px": 64
+   "w_px": 72,
+   "h_px": 59
   },
   {
    "res": [
@@ -377,8 +377,8 @@
    "fov": 90,
    "state": "spread",
    "facing": "three_quarter",
-   "w_px": 62,
-   "h_px": 64
+   "w_px": 50,
+   "h_px": 59
   },
   {
    "res": [
@@ -386,57 +386,42 @@
     1440
    ],
    "fov": 90,
-   "state": "spread_lowered",
-   "facing": "back",
-   "w_px": 90,
-   "h_px": 47
+   "state": "spread",
+   "facing": "front",
+   "w_px": 70,
+   "h_px": 58
   }
  ],
  "value_key": {
   "folded_front": {
-   "bronze": 0.655,
-   "brass": 0.335,
-   "ivory_amber": 0.01
+   "bronze": 0.685,
+   "brass": 0.301,
+   "ivory_amber": 0.014
   },
   "folded_back": {
-   "bronze": 0.616,
-   "brass": 0.261,
-   "ivory_amber": 0.124
+   "bronze": 0.548,
+   "brass": 0.285,
+   "ivory_amber": 0.167
   },
   "folded_three_quarter_back": {
-   "bronze": 0.709,
-   "brass": 0.208,
-   "ivory_amber": 0.083
+   "bronze": 0.581,
+   "brass": 0.281,
+   "ivory_amber": 0.138
   },
   "spread_front": {
-   "bronze": 0.649,
-   "brass": 0.344,
-   "ivory_amber": 0.008
+   "bronze": 0.763,
+   "brass": 0.216,
+   "ivory_amber": 0.022
   },
   "spread_back": {
-   "bronze": 0.579,
-   "brass": 0.291,
-   "ivory_amber": 0.13
+   "bronze": 0.71,
+   "brass": 0.194,
+   "ivory_amber": 0.095
   },
   "spread_three_quarter_back": {
-   "bronze": 0.634,
-   "brass": 0.255,
-   "ivory_amber": 0.111
-  },
-  "spread_lowered_front": {
-   "bronze": 0.656,
-   "brass": 0.336,
-   "ivory_amber": 0.008
-  },
-  "spread_lowered_back": {
-   "bronze": 0.583,
-   "brass": 0.285,
-   "ivory_amber": 0.132
-  },
-  "spread_lowered_three_quarter_back": {
-   "bronze": 0.625,
-   "brass": 0.26,
-   "ivory_amber": 0.114
+   "bronze": 0.713,
+   "brass": 0.196,
+   "ivory_amber": 0.091
   }
  }
 }

@@ -1,0 +1,62 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#3a3a3a}</style>
+<script type="importmap">{"imports":{"three":"/three/build/three.module.js","three/addons/":"/three/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+
+// Renders one GLB per call: window.renderView({glb, view, size, bg, extent, centre, night})
+window.renderView = async (o) => {
+  const size = o.size || 1200;
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+  renderer.setPixelRatio(1);
+  renderer.setSize(size, size);
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = o.night ? 0.55 : 1.0;
+  document.body.innerHTML = '';
+  document.body.appendChild(renderer.domElement);
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(o.bg || '#3a3a3a');
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+  scene.environmentIntensity = o.night ? 0.1 : 0.75;
+  // Even light from front and back, no cast shadows.
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x404040, o.night ? 0.06 : 0.55));
+  for (const [x, y, z, i] of [[3, 4, 5, 0.9], [-3, 4, -5, 0.9], [-5, 2, 3, 0.45], [5, 2, -3, 0.45], [0, 6, 0, 0.35]]) {
+    const d = new THREE.DirectionalLight(0xffffff, (o.night ? 0.06 : 1) * i);
+    d.position.set(x, y, z);
+    scene.add(d);
+  }
+  const gltf = await new GLTFLoader().loadAsync(o.glb);
+  scene.add(gltf.scene);
+  if (o.clip) {
+    const mixer = new THREE.AnimationMixer(gltf.scene);
+    const clip = gltf.animations.find(a => a.name === o.clip);
+    const act = mixer.clipAction(clip);
+    act.play();
+    mixer.setTime(Math.min(o.time ?? clip.duration, clip.duration - 1e-4));
+  }
+  const c = new THREE.Vector3(...(o.centre || [0, 1.6, 0.3]));
+  const ext = o.extent || 3.2;
+  const cam = new THREE.OrthographicCamera(-ext / 2, ext / 2, ext / 2, -ext / 2, 0.01, 100);
+  const dirs = { front: [0, 0, -1], back: [0, 0, 1], side: [1, 0, 0], side_left: [-1, 0, 0],
+                 three_quarter: [0.7071, 0, -0.7071], three_quarter_back: [0.7071, 0, 0.7071],
+                 three_quarter_back_high: [0.62, 0.35, 0.7], top: [0, 1, 0.001] };
+  const d = new THREE.Vector3(...dirs[o.view]).normalize();
+  cam.position.copy(c).addScaledVector(d, 20);
+  cam.lookAt(c);
+  const composer = new EffectComposer(renderer);
+  composer.addPass(new RenderPass(scene, cam));
+  if (o.bloom) composer.addPass(new UnrealBloomPass(new THREE.Vector2(size, size), o.night ? 0.8 : 0.22, 0.3, o.night ? 0.25 : 0.93));
+  composer.addPass(new OutputPass());
+  composer.render();
+  return renderer.domElement.toDataURL('image/png');
+};
+window.ready = true;
+</script></body></html>

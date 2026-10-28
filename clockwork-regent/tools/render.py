@@ -46,13 +46,18 @@ class Camera:
 
 
 def rasterise(cam, items):
-    """items: iterable of (corners[8,3], value). Returns (value image, depth image).
-    `value` can be any int id; background is -1."""
+    """items: iterable of (geometry, value), geometry = box corners [8,3] or triangles [N,3,3].
+    Returns (value image, depth image). `value` can be any int id; background is -1."""
     img = np.full((cam.h, cam.w), -1, np.int32)
     zbuf = np.full((cam.h, cam.w), np.inf)
-    for corners, val in items:
-        sp = cam.project(np.asarray(corners, float))
-        for a, b, c in _tris(sp):
+    for geo, val in items:
+        geo = np.asarray(geo, float)
+        if geo.ndim == 3:
+            sp = cam.project(geo.reshape(-1, 3)).reshape(-1, 3, 3)
+            tris = iter(sp)
+        else:
+            tris = _tris(cam.project(geo))
+        for a, b, c in tris:
             xs = (a[0], b[0], c[0])
             ys = (a[1], b[1], c[1])
             x0 = max(int(math.floor(min(xs))), 0)

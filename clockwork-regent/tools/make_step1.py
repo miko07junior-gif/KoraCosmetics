@@ -14,8 +14,8 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
 import player
+import regent
 import render
-import rig
 import scene
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -25,7 +25,7 @@ OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "..", "renders", 
 ICON_SIZES = (64, 96, 128)
 SCREENS = [((1366, 768), 70), ((1920, 1080), 70), ((1920, 1080), 90), ((1920, 1080), 110), ((2560, 1440), 90)]
 
-STATES = {"folded": {}, "spread": rig.pose_spread(), "spread_lowered": rig.pose_spread(layout="lowered")}
+STATES = {"folded": regent.pose_state(t=0.0), "spread": regent.pose_state(t=1.0)}
 MAIN_STATES = ("folded", "spread")
 BLOCK = player.PLAYER_RENDER_SCALE / 16.0   # model px -> blocks
 
@@ -76,7 +76,7 @@ def up(arr, k):
 def fit_ortho(view, its, size, pad=0.08):
     """Orthographic camera framing `its` in a size x size icon, like a store tile."""
     cam0 = render.ortho_view(view, (0, 0, 0), 1.0, 1)
-    pts = np.concatenate([c for c, _ in its])
+    pts = np.concatenate([np.asarray(c).reshape(-1, 3) for c, _ in its])
     pr = cam0.project(pts)
     lo, hi = pr[:, :2].min(0), pr[:, :2].max(0)
     extent = max(hi - lo) * (1 + 2 * pad)
@@ -98,7 +98,7 @@ def icon(state, view, size, palette, show_player=True, supersample=1):
 
 def thirty_block(state, facing, res, fov, palette, distance=30.0, show_rig=True, bg=WHITE):
     """The wearer `distance` blocks away on flat ground; viewer's eye at 1.62 blocks, looking level."""
-    its = scene.scale_items(scene.items(STATES[state] if show_rig else {}, show_rig=show_rig), BLOCK)
+    its = scene.scale_items(scene.items(STATES[state], show_rig=show_rig), BLOCK)
     yaw = {"front": 0.0, "back": math.pi, "side": math.pi / 2, "three_quarter": math.pi / 4}[facing]
     # Wearer faces -z; place the viewer along the facing direction, rotated by yaw.
     d = np.array([math.sin(yaw), 0.0, -math.cos(yaw)])
@@ -162,12 +162,12 @@ def main():
     for res, fov in SCREENS:
         row = []
         for state, facing in (("none", "front"), ("folded", "front"), ("folded", "back"), ("folded", "side"),
-                              ("spread", "back"), ("spread", "three_quarter"), ("spread_lowered", "back")):
+                              ("spread", "back"), ("spread", "three_quarter"), ("spread", "front")):
             arr, dims = thirty_block("folded" if state == "none" else state, facing, res, fov, SIL, show_rig=state != "none")
             row.append(label(up(arr, 3), f"{res[1]}p fov{fov} {state} {facing}"))
             meas["thirty_blocks"].append(dict(res=res, fov=fov, state=state, facing=facing, **dims))
         panels += row
-    grid(panels, 7, title="30 blocks: true screen pixels (3x nearest zoom). 'none' = bare player for scale; 'spread_lowered' = rejected first layout"
+    grid(panels, 7, title="30 blocks: true screen pixels (3x nearest zoom). 'none' = bare player for scale"
          ).save(os.path.join(OUT, "silhouettes_30_blocks.png"))
 
     # 3. Notan: cosmetic in two values (bronze dark / everything else light); wearer and field mid grey.
@@ -196,21 +196,6 @@ def main():
                                 f"{state} {v.replace('three_quarter', '3/4').replace('_', ' ')}: {fr['bronze']:.0%} / {fr['brass']:.0%} / {fr['ivory_amber']:.0%}"))
     grid(panels, 3, title="Value key (bronze / brass / ivory+amber share of visible cosmetic). Target ~60 / 30 / 10"
          ).save(os.path.join(OUT, "value_key.png"))
-
-    # 5. Gray-box views and the unfold, in placeholder colours (not the painted ramps).
-    seq = [("folded", {}), ("arch splits", rig.pose_spread(t=0.35, tier_t=dict(coverts=0, secondaries=0, primaries=0))),
-           ("coverts open", rig.pose_spread(t=0.7, tier_t=dict(coverts=1, secondaries=0, primaries=0))),
-           ("secondaries open", rig.pose_spread(t=0.9, tier_t=dict(coverts=1, secondaries=1, primaries=0))),
-           ("spread", rig.pose_spread())]
-    panels = []
-    for name, pose in seq:
-        for v in ("front", "back", "side", "three_quarter_back"):
-            cam = render.ortho_view(v, (0, 27, 6), 84, 240)
-            ids, _ = render.rasterise(cam, scene.items(pose))
-            panels.append(label(Image.fromarray(render.colourise(ids, scene.PREVIEW, (30, 30, 34))),
-                                f"{name}: {v.replace('three_quarter', '3/4').replace('_', ' ')}"))
-    grid(panels, 4, title="Gray box, placeholder colours: the unfold from dormant niche to sunburst (front = facing viewer)"
-         ).save(os.path.join(OUT, "graybox_unfold.png"))
 
     with open(os.path.join(OUT, "step1_measurements.json"), "w") as f:
         json.dump(meas, f, indent=1)

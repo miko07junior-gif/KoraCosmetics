@@ -14,18 +14,18 @@ and don't run any script from that copy. Recheck all of this on the next Kora re
 | Question | Why it matters here | Current stand-in |
 |---|---|---|
 | Supported Minecraft versions | Pose set for the clipping envelope (spear poses arrived in 1.21.11) | vanilla 1.21.x poses, `tools/player.py` |
-| Model format (Bedrock geo, GeckoLib, OBJ, own JSON?) | `design/regent_graybox.json` has to be converted to it | format-neutral JSON |
+| Model format (Bedrock geo, GeckoLib, OBJ, glTF, own JSON?), and whether it takes meshes or only cubes | The model is a high-resolution mesh (bevelled plates, toothed gears). A cubes-only format would mean re-cutting it into many small cubes | `design/regent_rigged.glb` + `design/regent_spec.json` |
 | Axis, rotation order, units, pivot semantics | Conversion and mirroring | Minecraft ModelPart ZYX, pixels |
-| Bone limit, cube/vertex limit | Gray box uses **67 bones, 148 cubes** | unknown |
+| Bone, vertex and triangle limits | The model uses **130 joints** (59 hinges, 16 slides, 55 light nodes) and **~24k triangles**. Light nodes can be merged per tier; blades per tier if needed | unknown |
 | Texture size limits, filtering, mipmaps | Texel density, what survives at 30 blocks | unknown |
 | How emissive is drawn; any bloom | Amber budget, night captures, light-travel effect | unknown |
-| Can emissive animate (per-bone visibility, UV scroll, frame textures)? | "Light travels outward from the heart" needs one of these | unknown |
+| Can emissive animate (per-bone visibility, UV scroll, frame textures)? | The light path is built as lit strips that scale 0 to 1 along their length, so bone scale keys are enough. If Kora can't scale bones, visibility steps per strip work too | bone scale |
 | Animation format; triggers (idle, sprint, sneak, menu, emote?) | Which states exist and what wakes the wings | brief's four states |
 | Interpolation: stepped available, or only smooth? | If smooth only, recoil is authored as extra keys | unknown |
-| Wings and cape at the same time? Does Kora move or hide the cape? | **Decides the mount.** See design notes §3 | assume both, vanilla cape |
+| Wings and cape at the same time? | The owner chose not to design around capes | not considered |
 | Wings vs elytra, swimming, crawling, riding, sleeping | Whether those poses need clean clearance | excluded from the envelope |
 | Player render scale for cosmetics (vanilla draws the player at 15/16) | 30-block and F5 sizes | 15/16 |
-| Armor offset: does Kora push back-mounted cosmetics out when a chestplate is worn? | The heart sits 0.25 px off a chestplate, 1.25 px off a bare back | fixed position |
+| Armor offset: does Kora push back-mounted cosmetics out when a chestplate is worn? | The root plates and heart sit flush on a chestplate (z = 3), so they float 1 px off a bare back | fixed position |
 | Menu preview / store icon size and camera | Step 1 icon sheets use 64/96/128 as placeholders | placeholders |
 | Own-player rendering in F5 (fade, hide, transparency?) | F5 occlusion numbers below may not apply | fully opaque |
 
@@ -72,4 +72,4 @@ report min / median / max:
 | F5 occlusion | `tools/f5check.py` with the shipped wing loaded |
 | 30-block silhouette | `tools/make_step1.py` with the shipped wing loaded |
 
-Clockwork Regent's own row is filled from `design/regent_graybox.json` once painted.
+Clockwork Regent's own row is filled from `design/regent_spec.json` once painted.

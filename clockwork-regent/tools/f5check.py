@@ -16,22 +16,22 @@ import numpy as np
 from PIL import Image
 
 import player
+import regent
 import render
-import rig
 import scene
 from make_step1 import BLOCK, grid, label
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "..", "renders", "checks")
 
-STATES = {"folded": {}, "spread": rig.pose_spread(), "spread_lowered": rig.pose_spread(layout="lowered")}
+STATES = {"folded": regent.pose_state(t=0.0), "spread": regent.pose_state(t=1.0)}
 SCREENS = [((1920, 1080), 70), ((1920, 1080), 90), ((1920, 1080), 110)]
 PITCHES = (-30, 0, 30)   # + looks down
 
 
 def f5(state, res, fov, pitch_deg):
     pp = player.PlayerPose(head_pitch_deg=pitch_deg)
-    pl = scene.scale_items(scene.items({}, pp, show_rig=False), BLOCK)
+    pl = scene.scale_items(scene.items(None, pp, show_rig=False), BLOCK)
     co = scene.scale_items(scene.items(STATES[state], pp, show_player=False), BLOCK)
     pitch = math.radians(pitch_deg)
     look = np.array([0.0, -math.sin(pitch), -math.cos(pitch)])   # wearer faces -z

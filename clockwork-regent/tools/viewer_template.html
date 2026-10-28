@@ -1,0 +1,325 @@
+<title>Clockwork Regent</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+  /* Layout: one-screen vitrine. The model fills the case; a brass plaque top-left, the
+     controls as a tray along the bottom, the escapement chart bottom-right. */
+  :root {
+    --case: #15181b;          /* blued-steel vitrine */
+    --case-2: #1d2226;
+    --rule: #3a3f42;
+    --ink: #e9e2d0;           /* ivory enamel */
+    --ink-dim: #a8a091;
+    --brass: #c9a35a;
+    --amber: #ffb04a;
+    --verdigris: #5f9c8a;
+    --display: "Marcellus SC", "Cormorant SC", Georgia, serif;
+    --body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+    color-scheme: dark;
+  }
+  html, body { height: 100%; }
+  body { background: var(--case); color: var(--ink); font-family: var(--body); overflow: hidden; }
+  #stage { position: fixed; inset: 0; }
+  #stage canvas { display: block; width: 100%; height: 100%; }
+  .plaque {
+    position: fixed; top: calc(14px + env(safe-area-inset-top, 0px)); left: max(16px, env(safe-area-inset-left, 0px));
+    max-width: min(420px, calc(100vw - 32px)); padding: 12px 14px 11px; border: 1px solid var(--rule);
+    background: color-mix(in srgb, var(--case) 82%, transparent); backdrop-filter: blur(6px);
+  }
+  .plaque h1 { margin: 0; font-family: var(--display); font-weight: 400; font-size: 1.45rem; letter-spacing: 0.06em; color: var(--brass); text-wrap: balance; }
+  .plaque p { margin: 4px 0 0; color: var(--ink-dim); font-size: 0.86rem; line-height: 1.4; }
+  .readout { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px 14px; font-family: var(--mono); font-size: 0.74rem; color: var(--ink-dim); font-variant-numeric: tabular-nums; }
+  .readout b { color: var(--ink); font-weight: 600; }
+  .tray {
+    position: fixed; left: 0; right: 0; bottom: 0;
+    padding-block: 10px calc(12px + env(safe-area-inset-bottom, 0px));
+    padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+    background: linear-gradient(to top, color-mix(in srgb, var(--case) 94%, transparent) 70%, transparent);
+    display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: flex-end;
+  }
+  .group { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+  .group > span { font-family: var(--display); font-size: 0.72rem; letter-spacing: 0.12em; color: var(--ink-dim); }
+  .seg { display: flex; flex-wrap: wrap; gap: 0; border: 1px solid var(--rule); }
+  .seg button {
+    font: 600 0.82rem var(--body); color: var(--ink); background: var(--case-2); border: 0; border-right: 1px solid var(--rule);
+    padding: 7px 11px; cursor: pointer; min-height: 34px;
+  }
+  .seg button:last-child { border-right: 0; }
+  .seg button[aria-pressed="true"] { background: var(--brass); color: #1b1408; }
+  .seg button:hover:not([aria-pressed="true"]) { background: #262c31; }
+  .seg button:focus-visible { outline: 2px solid var(--amber); outline-offset: -2px; }
+  .chart {
+    position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); top: calc(14px + env(safe-area-inset-top, 0px));
+    width: min(270px, calc(100vw - 32px)); padding: 9px 11px 8px; border: 1px solid var(--rule);
+    background: color-mix(in srgb, var(--case) 82%, transparent); backdrop-filter: blur(6px);
+  }
+  .chart h2 { margin: 0 0 4px; font-family: var(--display); font-weight: 400; font-size: 0.8rem; letter-spacing: 0.12em; color: var(--ink-dim); }
+  .chart svg { display: block; width: 100%; height: auto; }
+  .chart .note { margin: 4px 0 0; font-size: 0.74rem; color: var(--ink-dim); line-height: 1.35; }
+  .loading { position: fixed; inset: 0; display: grid; place-items: center; font-family: var(--display); letter-spacing: 0.15em; color: var(--ink-dim); }
+  @media (max-width: 720px) {
+    .chart { display: none; }
+    .plaque p { display: none; }
+    .tray { gap: 8px 12px; }
+    .seg button { padding: 6px 9px; font-size: 0.78rem; }
+  }
+</style>
+
+<div id="stage" aria-label="3D view of the Clockwork Regent wings on a player"></div>
+<div class="loading" id="loading">Winding the movement…</div>
+
+<section class="plaque" aria-live="polite">
+  <h1>Clockwork Regent</h1>
+  <p>Folding wings for Kora Client. Gray-box materials; every motion is driven by a simulated recoil escapement.</p>
+  <div class="readout">
+    <span>state <b id="r-state">dormant</b></span>
+    <span>tick <b id="r-tick">0</b></span>
+    <span>beat <b id="r-beat">1 Hz</b></span>
+  </div>
+</section>
+
+<aside class="chart" aria-label="Escapement beat chart">
+  <h2>Escape wheel, one beat</h2>
+  <svg id="beat" viewBox="0 0 250 104" role="img" aria-label="Wheel angle over one beat: impulse, drop, recoil"></svg>
+  <p class="note">Forward on impulse, a sudden drop, then the pallet pushes the wheel back while the pendulum finishes its swing.</p>
+</aside>
+
+<nav class="tray" aria-label="Controls">
+  <div class="group"><span>STATE</span>
+    <div class="seg" id="g-state">
+      <button id="b-dormant" aria-pressed="true">Dormant</button>
+      <button id="b-wake" aria-pressed="false">Wake</button>
+      <button id="b-awake" aria-pressed="false">Awake</button>
+      <button id="b-sleep" aria-pressed="false">Sleep</button>
+    </div>
+  </div>
+  <div class="group"><span>VIEW</span>
+    <div class="seg" id="g-view">
+      <button data-view="back" aria-pressed="false">Back</button>
+      <button data-view="tq" aria-pressed="true">¾</button>
+      <button data-view="side" aria-pressed="false">Side</button>
+      <button data-view="front" aria-pressed="false">Front</button>
+      <button data-view="f5" aria-pressed="false">F5</button>
+      <button data-view="b10" aria-pressed="false">10 blocks</button>
+      <button data-view="b30" aria-pressed="false">30 blocks</button>
+    </div>
+  </div>
+  <div class="group"><span>WEARER</span>
+    <div class="seg" id="g-pose">
+      <button id="b-stand" aria-pressed="true">Stand</button>
+      <button id="b-sneak" aria-pressed="false">Sneak</button>
+    </div>
+  </div>
+  <div class="group"><span>LIGHT</span>
+    <div class="seg" id="g-light">
+      <button id="b-day" aria-pressed="true">Day</button>
+      <button id="b-night" aria-pressed="false">Night</button>
+    </div>
+  </div>
+  <div class="group"><span>SPEED</span>
+    <div class="seg" id="g-speed">
+      <button data-speed="1" aria-pressed="true">1×</button>
+      <button data-speed="0.25" aria-pressed="false">¼×</button>
+    </div>
+  </div>
+</nav>
+
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+
+const GLB_B64 = "__GLB_B64__";
+const ESC = __ESC__;          // escapement constants shared with tools/motion.py
+const PX = 1 / 16, S = 0.9375; // model pixel in blocks; vanilla draws players at 15/16
+
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const stage = document.getElementById('stage');
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+stage.appendChild(renderer.domElement);
+const scene = new THREE.Scene();
+const pmrem = new THREE.PMREMGenerator(renderer);
+const envTex = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+scene.environment = envTex;
+
+const hemi = new THREE.HemisphereLight(0xfff6e8, 0x30353a, 0.55);
+scene.add(hemi);
+const lights = [[3, 4, 5, 0.9], [-3, 4, -5, 0.9], [-5, 2, 3, 0.45], [5, 2, -3, 0.45]].map(([x, y, z, i]) => {
+  const d = new THREE.DirectionalLight(0xffffff, i); d.position.set(x, y, z); d.userData.base = i; scene.add(d); return d;
+});
+const floor = new THREE.Mesh(new THREE.CircleGeometry(1.7, 64), new THREE.MeshStandardMaterial({ color: 0x191d20, roughness: 1.0 }));
+floor.rotation.x = -Math.PI / 2; scene.add(floor);
+
+const camera = new THREE.PerspectiveCamera(32, 1, 0.05, 200);
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+const bloom = new UnrealBloomPass(new THREE.Vector2(512, 512), 0.25, 0.35, 0.9);
+composer.addPass(bloom);
+composer.addPass(new OutputPass());
+
+// ---- the wearer: vanilla player boxes, in model pixels, origin between the feet
+const world = new THREE.Group(); world.scale.setScalar(S * PX); scene.add(world);
+const skin = new THREE.MeshStandardMaterial({ color: 0x5a5d61, roughness: 0.92 });
+function boxAt(lo, size) {
+  const m = new THREE.Mesh(new THREE.BoxGeometry(...size), skin);
+  m.position.set(lo[0] + size[0] / 2, lo[1] + size[1] / 2, lo[2] + size[2] / 2);
+  return m;
+}
+function pivotGroup(px, py, pz) { const g = new THREE.Group(); g.position.set(px, py, pz); return g; }
+const body = pivotGroup(0, 24, 0), head = pivotGroup(0, 24, 0);
+const armR = pivotGroup(5, 22, 0), armL = pivotGroup(-5, 22, 0), legR = pivotGroup(1.9, 12, 0), legL = pivotGroup(-1.9, 12, 0);
+body.add(boxAt([-4, -12, -2], [8, 12, 4]));
+head.add(boxAt([-4, 0, -4], [8, 8, 8]));
+armR.add(boxAt([-1, -10, -2], [4, 12, 4])); armL.add(boxAt([-3, -10, -2], [4, 12, 4]));
+legR.add(boxAt([-2, -12, -2], [4, 12, 4])); legL.add(boxAt([-2, -12, -2], [4, 12, 4]));
+world.add(body, head, armR, armL, legR, legL);
+const mount = new THREE.Group(); mount.position.set(0, -24, 0); body.add(mount);   // cosmetic follows the body
+
+function setSneak(on) {
+  // Vanilla sneak: body pitched 0.5 rad and lowered 3.2 px; head lowered 4.2; arms 5.2 and pitched 0.4; legs back 4.
+  body.position.set(0, on ? 20.8 : 24, 0); body.rotation.x = on ? -0.5 : 0;
+  head.position.set(0, on ? 19.8 : 24, 0);
+  for (const a of [armR, armL]) { a.position.y = on ? 18.8 : 22; a.rotation.x = on ? -0.4 : 0; }
+  for (const l of [legR, legL]) { l.position.y = on ? 11.8 : 12; l.position.z = on ? 4 : 0; }
+}
+
+// ---- the cosmetic
+const bytes = Uint8Array.from(atob(GLB_B64), c => c.charCodeAt(0));
+let mixer, clips = {}, action, state = 'dormant', speed = 1, mats = [];
+new GLTFLoader().parse(bytes.buffer, '', gltf => {
+  const g = gltf.scene; g.scale.setScalar(16); mount.add(g);    // GLB is in blocks; mount is in pixels
+  g.traverse(o => { if (o.isMesh && !mats.includes(o.material)) mats.push(o.material); });
+  setLight(night);
+  mixer = new THREE.AnimationMixer(g);
+  for (const c of gltf.animations) clips[c.name] = c;
+  mixer.addEventListener('finished', () => setState(state === 'waking' ? 'awake' : 'dormant', true));
+  document.getElementById('loading').remove();
+  setState('dormant', true);
+});
+
+function play(name, loop) {
+  const next = mixer.clipAction(clips[name]);
+  next.reset(); next.setLoop(loop ? THREE.LoopRepeat : THREE.LoopOnce); next.clampWhenFinished = !loop;
+  next.play();
+  if (action && action !== next) action.stop();
+  action = next;
+}
+const labels = { dormant: 'dormant', waking: 'waking', awake: 'awake', sleeping: 'falling asleep' };
+function setState(s, auto) {
+  if (!mixer) return;
+  if (s === 'wake') s = 'waking';
+  if (s === 'sleep') s = 'sleeping';
+  state = s;
+  play({ dormant: 'idle_folded', waking: 'wake', awake: 'idle_spread', sleeping: 'sleep' }[s], s === 'dormant' || s === 'awake');
+  document.getElementById('r-state').textContent = labels[s];
+  document.getElementById('r-beat').textContent = (s === 'waking' || s === 'sleeping') ? '1 → 4 Hz' : '1 Hz';
+  const map = { dormant: 'b-dormant', waking: 'b-wake', awake: 'b-awake', sleeping: 'b-sleep' };
+  for (const b of document.querySelectorAll('#g-state button')) b.setAttribute('aria-pressed', String(b.id === map[s]));
+}
+document.getElementById('b-dormant').onclick = () => setState('dormant');
+document.getElementById('b-wake').onclick = () => setState('wake');
+document.getElementById('b-awake').onclick = () => setState('awake');
+document.getElementById('b-sleep').onclick = () => setState('sleep');
+
+function pressOnly(groupId, el) { for (const b of document.querySelectorAll(`#${groupId} button`)) b.setAttribute('aria-pressed', String(b === el)); }
+document.getElementById('b-stand').onclick = e => { setSneak(false); pressOnly('g-pose', e.currentTarget); };
+document.getElementById('b-sneak').onclick = e => { setSneak(true); pressOnly('g-pose', e.currentTarget); };
+for (const b of document.querySelectorAll('#g-speed button')) b.onclick = () => { speed = +b.dataset.speed; pressOnly('g-speed', b); };
+
+let night = false;
+function setLight(n) {
+  night = n;
+  scene.background = new THREE.Color(n ? 0x07090d : 0x2a2f33);
+  for (const m of mats) m.envMapIntensity = n ? 0.08 : 0.8;
+  skin.envMapIntensity = n ? 0.08 : 0.8;
+  hemi.intensity = n ? 0.05 : 0.55;
+  for (const d of lights) d.intensity = d.userData.base * (n ? 0.05 : 1);
+  bloom.strength = n ? 0.85 : 0.25; bloom.threshold = n ? 0.25 : 0.9;
+  renderer.toneMappingExposure = n ? 0.7 : 1.0;
+}
+document.getElementById('b-day').onclick = e => { setLight(false); pressOnly('g-light', e.currentTarget); };
+document.getElementById('b-night').onclick = e => { setLight(true); pressOnly('g-light', e.currentTarget); };
+setLight(false);
+
+// ---- views (blocks; the wearer's eye is 1.62 up, they face -z)
+const EYE = 1.62;
+const views = {
+  back:  { fov: 32, pos: [0, 1.5, 7.5], tgt: [0, 1.45, 0] },
+  tq:    { fov: 32, pos: [4.6, 2.4, 5.6], tgt: [0, 1.45, 0] },
+  side:  { fov: 32, pos: [7.5, 1.5, 0.2], tgt: [0, 1.45, 0.2] },
+  front: { fov: 32, pos: [0, 1.5, -7.5], tgt: [0, 1.45, 0] },
+  f5:    { fov: 70, pos: [0, EYE, 4.0], tgt: [0, EYE, -8] },        // vanilla third-person back, FOV 70
+  b10:   { fov: 70, pos: [0, EYE, 10.0], tgt: [0, 1.0, 0] },
+  b30:   { fov: 70, pos: [0, EYE, 30.0], tgt: [0, 1.0, 0] },
+};
+function setView(name) {
+  const v = views[name];
+  camera.fov = v.fov; camera.position.set(...v.pos); controls.target.set(...v.tgt);
+  const free = !['f5', 'b10', 'b30'].includes(name);
+  controls.enabled = free; camera.updateProjectionMatrix(); controls.update();
+  for (const b of document.querySelectorAll('#g-view button')) b.setAttribute('aria-pressed', String(b.dataset.view === name));
+}
+for (const b of document.querySelectorAll('#g-view button')) b.onclick = () => setView(b.dataset.view);
+setView('tq');
+
+// ---- escapement chart: one beat of the wheel, from the same model as the animation
+function beatProfile(u) {
+  const xi = ESC.A - ESC.A * Math.cos(Math.PI * u), c = ESC.A + ESC.lift / 2;
+  return xi <= c ? ESC.K * xi : ESC.K * c + ESC.drop - ESC.K * (xi - c);
+}
+const svg = document.getElementById('beat');
+(() => {
+  const W = 250, H = 104, x0 = 34, x1 = 244, y0 = 10, y1 = 82;
+  const max = ESC.K * (ESC.A + ESC.lift / 2) + ESC.drop;
+  const X = u => x0 + (x1 - x0) * u, Y = d => y1 - (y1 - y0) * d / max;
+  let d = '';
+  for (let i = 0; i <= 200; i++) { const u = i / 200; d += (i ? 'L' : 'M') + X(u).toFixed(1) + ' ' + Y(beatProfile(u)).toFixed(1); }
+  const ns = 'http://www.w3.org/2000/svg';
+  const add = (tag, attrs, text) => { const e = document.createElementNS(ns, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (text) e.textContent = text; svg.appendChild(e); return e; };
+  for (const v of [0, 2, 4, 6, 8]) { if (v > max) continue; add('line', { x1: x0, x2: x1, y1: Y(v), y2: Y(v), stroke: '#2e3438', 'stroke-width': 1 }); add('text', { x: x0 - 5, y: Y(v) + 3.5, 'text-anchor': 'end', fill: '#a8a091', 'font-size': 9, 'font-family': 'JetBrains Mono, monospace' }, v + '°'); }
+  for (const [t, lab] of [[0, '0'], [10, '10'], [20, '20 ticks']]) add('text', { x: X(t / 20), y: H - 6, 'text-anchor': t ? (t === 20 ? 'end' : 'middle') : 'start', fill: '#a8a091', 'font-size': 9, 'font-family': 'JetBrains Mono, monospace' }, lab);
+  add('path', { d, fill: 'none', stroke: '#c9a35a', 'stroke-width': 2 });
+  window.__playhead = add('circle', { cx: X(0), cy: Y(0), r: 3.6, fill: '#ffb04a' });
+  window.__X = X; window.__Y = Y;
+})();
+
+function resize() {
+  const w = stage.clientWidth, h = stage.clientHeight;
+  renderer.setSize(w, h); composer.setSize(w, h); camera.aspect = w / h; camera.updateProjectionMatrix();
+}
+addEventListener('resize', resize); resize();
+
+const clock = new THREE.Clock();
+let ticks = 0;
+renderer.setAnimationLoop(() => {
+  const dt = Math.min(clock.getDelta(), 0.1) * (reduceMotion ? 0.25 : 1) * speed;
+  if (mixer) mixer.update(dt);
+  ticks += dt * 20;
+  document.getElementById('r-tick').textContent = Math.floor(ticks);
+  if (action && (state === 'dormant' || state === 'awake')) {
+    const u = (action.time % 1);
+    window.__playhead.setAttribute('cx', window.__X(u)); window.__playhead.setAttribute('cy', window.__Y(beatProfile(u)));
+  }
+  controls.update();
+  composer.render();
+});
+</script>

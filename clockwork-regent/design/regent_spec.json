@@ -1,0 +1,3276 @@
+{
+ "name": "clockwork_regent",
+ "conventions": {
+  "units": "model pixels (1/16 block), before vanilla's 15/16 player scale",
+  "axes": "+x wearer's right, +y up, +z behind the wearer; origin between the feet; the wearer faces -z",
+  "attach": "every joint follows the player's body part (pivot at the neck, 0,24,0)",
+  "rest_pose": "folded, baked into the geometry; hinge poses are angles (deg) about each joint's axis at its pivot",
+  "kinds": "hinge: rotation; slide: translation along axis (px); seam: light strip scaled along axis 0..1; glow: lit jewel scaled uniformly 0..1"
+ },
+ "params": {
+  "back_z": 3.0,
+  "shoulder": [
+   1.05,
+   21.9,
+   3.95
+  ],
+  "ball_r": 0.75,
+  "knee": [
+   1.85,
+   2.15,
+   1.95
+  ],
+  "elbow": [
+   7.6,
+   28.6
+  ],
+  "arch_r_frac": 0.7,
+  "apex_gap": 0.12,
+  "arch_split": 0.47,
+  "wing_z": 5.95,
+  "humerus_spread": 127.0,
+  "forearm_spread": 160.0,
+  "hand_spread": 150.0,
+  "tiers": {
+   "primaries": {
+    "n": 7,
+    "length": 10.5,
+    "ext": 6.0,
+    "w_base": 1.25,
+    "w_mid": 2.3,
+    "fold": [
+     206.0,
+     212.0
+    ],
+    "spread": [
+     66.0,
+     150.0
+    ],
+    "layer": -0.95
+   },
+   "secondaries": {
+    "n": 6,
+    "length": 8.6,
+    "ext": 0.0,
+    "w_base": 1.25,
+    "w_mid": 2.2,
+    "fold": [
+     198.0,
+     205.0
+    ],
+    "spread": [
+     72.0,
+     146.0
+    ],
+    "layer": -0.45
+   },
+   "coverts": {
+    "n": 5,
+    "length": 5.8,
+    "ext": 0.0,
+    "w_base": 1.3,
+    "w_mid": 2.2,
+    "fold": [
+     190.0,
+     198.0
+    ],
+    "spread": [
+     78.0,
+     142.0
+    ],
+    "layer": 0.05
+   }
+  },
+  "blade_thickness": 0.4,
+  "tatters": {
+   "primaries:2": [
+    6.0,
+    0.5,
+    1
+   ],
+   "primaries:5": [
+    7.5,
+    0.45,
+    -1
+   ],
+   "secondaries:3": [
+    5.0,
+    0.4,
+    1
+   ]
+  },
+  "short_blade": [
+   "primaries",
+   4,
+   1.2
+  ]
+ },
+ "escapement": {
+  "A": 2.5,
+  "lift": 3.0,
+  "drop": 1.5,
+  "K": 1.5
+ },
+ "joints": [
+  {
+   "name": "heart",
+   "parent": null,
+   "kind": "hinge",
+   "pivot": [
+    0.0,
+    17.25,
+    3.05
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 18,
+   "triangles": 2000,
+   "materials": [
+    "amber",
+    "brass",
+    "bronze_dark",
+    "ivory"
+   ]
+  },
+  {
+   "name": "escape_wheel",
+   "parent": "heart",
+   "kind": "hinge",
+   "pivot": [
+    0.0,
+    17.25,
+    4.05
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 5,
+   "triangles": 708,
+   "materials": [
+    "brass"
+   ]
+  },
+  {
+   "name": "pallet",
+   "parent": "heart",
+   "kind": "hinge",
+   "pivot": [
+    0.0,
+    18.5,
+    4.4
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 4,
+   "triangles": 144,
+   "materials": [
+    "brass"
+   ]
+  },
+  {
+   "name": "seam_heart",
+   "parent": "heart",
+   "kind": "glow",
+   "pivot": [
+    0.0,
+    17.25,
+    4.8
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 1,
+   "triangles": 156,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "root_r",
+   "parent": null,
+   "kind": "hinge",
+   "pivot": [
+    1.25,
+    19.0,
+    3.0
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 8,
+   "triangles": 704,
+   "materials": [
+    "brass",
+    "bronze_dark",
+    "ivory",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_root_r",
+   "parent": "root_r",
+   "kind": "seam",
+   "pivot": [
+    1.05,
+    18.7,
+    3.62
+   ],
+   "axis": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 20,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "shoulder_gear_r",
+   "parent": "root_r",
+   "kind": "hinge",
+   "pivot": [
+    1.05,
+    21.9,
+    3.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 2,
+   "triangles": 432,
+   "materials": [
+    "brass",
+    "ivory"
+   ]
+  },
+  {
+   "name": "shoulder_r",
+   "parent": "root_r",
+   "kind": "hinge",
+   "pivot": [
+    1.05,
+    21.9,
+    3.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 16,
+   "triangles": 1104,
+   "materials": [
+    "brass",
+    "bronze",
+    "bronze_dark",
+    "ivory",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_humerus_r",
+   "parent": "shoulder_r",
+   "kind": "seam",
+   "pivot": [
+    3.3311,
+    24.4673,
+    6.6646
+   ],
+   "axis": [
+    0.7185,
+    0.6955,
+    0.0076
+   ],
+   "primitives": 1,
+   "triangles": 20,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "humerus_piston_r_cyl",
+   "parent": "root_r",
+   "kind": "hinge",
+   "pivot": [
+    0.6,
+    18.4,
+    4.0
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 3,
+   "triangles": 260,
+   "materials": [
+    "brass",
+    "bronze_dark"
+   ]
+  },
+  {
+   "name": "humerus_piston_r_rod",
+   "parent": "humerus_piston_r_cyl",
+   "kind": "slide",
+   "pivot": [
+    0.6,
+    18.4,
+    4.0
+   ],
+   "axis": [
+    0.3139,
+    0.9169,
+    0.2465
+   ],
+   "primitives": 2,
+   "triangles": 152,
+   "materials": [
+    "brass"
+   ]
+  },
+  {
+   "name": "elbow_gear_r",
+   "parent": "shoulder_r",
+   "kind": "hinge",
+   "pivot": [
+    7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 2,
+   "triangles": 824,
+   "materials": [
+    "brass",
+    "ivory"
+   ]
+  },
+  {
+   "name": "seam_elbow_r",
+   "parent": "elbow_gear_r",
+   "kind": "glow",
+   "pivot": [
+    7.6,
+    28.6,
+    7.61
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 1,
+   "triangles": 76,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "forearm_r",
+   "parent": "shoulder_r",
+   "kind": "hinge",
+   "pivot": [
+    7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 15,
+   "triangles": 540,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "hand_r",
+   "parent": "forearm_r",
+   "kind": "hinge",
+   "pivot": [
+    5.7622,
+    34.5775,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 20,
+   "triangles": 624,
+   "materials": [
+    "brass",
+    "bronze",
+    "ivory",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_forearm_0_r",
+   "parent": "forearm_r",
+   "kind": "seam",
+   "pivot": [
+    7.597,
+    28.8539,
+    6.69
+   ],
+   "axis": [
+    -0.0993,
+    0.9951,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 20,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "seam_forearm_1_r",
+   "parent": "forearm_r",
+   "kind": "seam",
+   "pivot": [
+    7.3372,
+    30.9501,
+    6.69
+   ],
+   "axis": [
+    -0.2939,
+    0.9558,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 20,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "seam_forearm_2_r",
+   "parent": "forearm_r",
+   "kind": "seam",
+   "pivot": [
+    6.6685,
+    32.9537,
+    6.69
+   ],
+   "axis": [
+    -0.4769,
+    0.879,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 20,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "seam_hand_0_r",
+   "parent": "hand_r",
+   "kind": "seam",
+   "pivot": [
+    5.5982,
+    34.8121,
+    6.69
+   ],
+   "axis": [
+    -0.6508,
+    0.7592,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 20,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "seam_hand_1_r",
+   "parent": "hand_r",
+   "kind": "seam",
+   "pivot": [
+    4.0006,
+    36.5774,
+    6.69
+   ],
+   "axis": [
+    -0.8034,
+    0.5955,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 20,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "seam_hand_2_r",
+   "parent": "hand_r",
+   "kind": "seam",
+   "pivot": [
+    2.0505,
+    37.9432,
+    6.69
+   ],
+   "axis": [
+    -0.9157,
+    0.402,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 20,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "primaries_r",
+   "parent": "shoulder_r",
+   "kind": "hinge",
+   "pivot": [
+    7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 0,
+   "triangles": 0,
+   "materials": []
+  },
+  {
+   "name": "primaries_r_0",
+   "parent": "primaries_r",
+   "kind": "hinge",
+   "pivot": [
+    7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 5,
+   "triangles": 172,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "primaries_r_0_ext",
+   "parent": "primaries_r_0",
+   "kind": "slide",
+   "pivot": [
+    7.2055,
+    29.4089,
+    7.15
+   ],
+   "axis": [
+    -0.4384,
+    0.8988,
+    0.0
+   ],
+   "primitives": 4,
+   "triangles": 216,
+   "materials": [
+    "amber",
+    "brass",
+    "bronze"
+   ]
+  },
+  {
+   "name": "seam_primaries_r_0",
+   "parent": "primaries_r_0",
+   "kind": "seam",
+   "pivot": [
+    6.9424,
+    29.9482,
+    7.42
+   ],
+   "axis": [
+    -0.4384,
+    0.8988,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "primaries_r_1",
+   "parent": "primaries_r",
+   "kind": "hinge",
+   "pivot": [
+    7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 5,
+   "triangles": 172,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "primaries_r_1_ext",
+   "parent": "primaries_r_1",
+   "kind": "slide",
+   "pivot": [
+    7.1914,
+    29.4019,
+    7.15
+   ],
+   "axis": [
+    -0.454,
+    0.891,
+    0.0
+   ],
+   "primitives": 4,
+   "triangles": 216,
+   "materials": [
+    "amber",
+    "brass",
+    "bronze"
+   ]
+  },
+  {
+   "name": "seam_primaries_r_1",
+   "parent": "primaries_r_1",
+   "kind": "seam",
+   "pivot": [
+    6.919,
+    29.9365,
+    7.42
+   ],
+   "axis": [
+    -0.454,
+    0.891,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "primaries_r_2",
+   "parent": "primaries_r",
+   "kind": "hinge",
+   "pivot": [
+    7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 5,
+   "triangles": 172,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "primaries_r_2_ext",
+   "parent": "primaries_r_2",
+   "kind": "slide",
+   "pivot": [
+    7.1775,
+    29.3947,
+    7.15
+   ],
+   "axis": [
+    -0.4695,
+    0.8829,
+    0.0
+   ],
+   "primitives": 4,
+   "triangles": 240,
+   "materials": [
+    "amber",
+    "brass",
+    "bronze"
+   ]
+  },
+  {
+   "name": "seam_primaries_r_2",
+   "parent": "primaries_r_2",
+   "kind": "seam",
+   "pivot": [
+    6.8958,
+    29.9244,
+    7.42
+   ],
+   "axis": [
+    -0.4695,
+    0.8829,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "primaries_r_3",
+   "parent": "primaries_r",
+   "kind": "hinge",
+   "pivot": [
+    7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 5,
+   "triangles": 172,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "primaries_r_3_ext",
+   "parent": "primaries_r_3",
+   "kind": "slide",
+   "pivot": [
+    7.1637,
+    29.3872,
+    7.15
+   ],
+   "axis": [
+    -0.4848,
+    0.8746,
+    0.0
+   ],
+   "primitives": 4,
+   "triangles": 216,
+   "materials": [
+    "amber",
+    "brass",
+    "bronze"
+   ]
+  },
+  {
+   "name": "seam_primaries_r_3",
+   "parent": "primaries_r_3",
+   "kind": "seam",
+   "pivot": [
+    6.8728,
+    29.9119,
+    7.42
+   ],
+   "axis": [
+    -0.4848,
+    0.8746,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "primaries_r_4",
+   "parent": "primaries_r",
+   "kind": "hinge",
+   "pivot": [
+    7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 5,
+   "triangles": 172,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "primaries_r_4_ext",
+   "parent": "primaries_r_4",
+   "kind": "slide",
+   "pivot": [
+    7.15,
+    29.3794,
+    7.15
+   ],
+   "axis": [
+    -0.5,
+    0.866,
+    0.0
+   ],
+   "primitives": 4,
+   "triangles": 216,
+   "materials": [
+    "amber",
+    "brass",
+    "bronze"
+   ]
+  },
+  {
+   "name": "seam_primaries_r_4",
+   "parent": "primaries_r_4",
+   "kind": "seam",
+   "pivot": [
+    6.85,
+    29.899,
+    7.42
+   ],
+   "axis": [
+    -0.5,
+    0.866,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "primaries_r_5",
+   "parent": "primaries_r",
+   "kind": "hinge",
+   "pivot": [
+    7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 5,
+   "triangles": 172,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "primaries_r_5_ext",
+   "parent": "primaries_r_5",
+   "kind": "slide",
+   "pivot": [
+    7.1365,
+    29.3715,
+    7.15
+   ],
+   "axis": [
+    -0.515,
+    0.8572,
+    0.0
+   ],
+   "primitives": 4,
+   "triangles": 240,
+   "materials": [
+    "amber",
+    "brass",
+    "bronze"
+   ]
+  },
+  {
+   "name": "seam_primaries_r_5",
+   "parent": "primaries_r_5",
+   "kind": "seam",
+   "pivot": [
+    6.8274,
+    29.8858,
+    7.42
+   ],
+   "axis": [
+    -0.515,
+    0.8572,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "primaries_r_6",
+   "parent": "primaries_r",
+   "kind": "hinge",
+   "pivot": [
+    7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 5,
+   "triangles": 172,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "primaries_r_6_ext",
+   "parent": "primaries_r_6",
+   "kind": "slide",
+   "pivot": [
+    7.1231,
+    29.3632,
+    7.15
+   ],
+   "axis": [
+    -0.5299,
+    0.848,
+    0.0
+   ],
+   "primitives": 4,
+   "triangles": 216,
+   "materials": [
+    "amber",
+    "brass",
+    "bronze"
+   ]
+  },
+  {
+   "name": "seam_primaries_r_6",
+   "parent": "primaries_r_6",
+   "kind": "seam",
+   "pivot": [
+    6.8051,
+    29.8721,
+    7.42
+   ],
+   "axis": [
+    -0.5299,
+    0.848,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "secondaries_r",
+   "parent": "shoulder_r",
+   "kind": "hinge",
+   "pivot": [
+    7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 0,
+   "triangles": 0,
+   "materials": []
+  },
+  {
+   "name": "secondaries_r_0",
+   "parent": "secondaries_r",
+   "kind": "hinge",
+   "pivot": [
+    7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 4,
+   "triangles": 248,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_secondaries_r_0",
+   "parent": "secondaries_r_0",
+   "kind": "seam",
+   "pivot": [
+    7.1365,
+    30.0266,
+    7.92
+   ],
+   "axis": [
+    -0.309,
+    0.9511,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "secondaries_r_1",
+   "parent": "secondaries_r",
+   "kind": "hinge",
+   "pivot": [
+    7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 4,
+   "triangles": 248,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_secondaries_r_1",
+   "parent": "secondaries_r_1",
+   "kind": "seam",
+   "pivot": [
+    7.1018,
+    30.0148,
+    7.92
+   ],
+   "axis": [
+    -0.3322,
+    0.9432,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "secondaries_r_2",
+   "parent": "secondaries_r",
+   "kind": "hinge",
+   "pivot": [
+    7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 4,
+   "triangles": 248,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_secondaries_r_2",
+   "parent": "secondaries_r_2",
+   "kind": "seam",
+   "pivot": [
+    7.0673,
+    30.0022,
+    7.92
+   ],
+   "axis": [
+    -0.3551,
+    0.9348,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "secondaries_r_3",
+   "parent": "secondaries_r",
+   "kind": "hinge",
+   "pivot": [
+    7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 4,
+   "triangles": 272,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_secondaries_r_3",
+   "parent": "secondaries_r_3",
+   "kind": "seam",
+   "pivot": [
+    7.0332,
+    29.9888,
+    7.92
+   ],
+   "axis": [
+    -0.3778,
+    0.9259,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "secondaries_r_4",
+   "parent": "secondaries_r",
+   "kind": "hinge",
+   "pivot": [
+    7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 4,
+   "triangles": 248,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_secondaries_r_4",
+   "parent": "secondaries_r_4",
+   "kind": "seam",
+   "pivot": [
+    6.9995,
+    29.9745,
+    7.92
+   ],
+   "axis": [
+    -0.4003,
+    0.9164,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "secondaries_r_5",
+   "parent": "secondaries_r",
+   "kind": "hinge",
+   "pivot": [
+    7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 4,
+   "triangles": 248,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_secondaries_r_5",
+   "parent": "secondaries_r_5",
+   "kind": "seam",
+   "pivot": [
+    6.9661,
+    29.9595,
+    7.92
+   ],
+   "axis": [
+    -0.4226,
+    0.9063,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "coverts_r",
+   "parent": "shoulder_r",
+   "kind": "hinge",
+   "pivot": [
+    7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 0,
+   "triangles": 0,
+   "materials": []
+  },
+  {
+   "name": "coverts_r_0",
+   "parent": "coverts_r",
+   "kind": "hinge",
+   "pivot": [
+    7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 4,
+   "triangles": 248,
+   "materials": [
+    "brass",
+    "bronze",
+    "ivory",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_coverts_r_0",
+   "parent": "coverts_r_0",
+   "kind": "seam",
+   "pivot": [
+    7.3395,
+    30.0772,
+    8.42
+   ],
+   "axis": [
+    -0.1736,
+    0.9848,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "coverts_r_1",
+   "parent": "coverts_r",
+   "kind": "hinge",
+   "pivot": [
+    7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 4,
+   "triangles": 248,
+   "materials": [
+    "brass",
+    "bronze",
+    "ivory",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_coverts_r_1",
+   "parent": "coverts_r_1",
+   "kind": "seam",
+   "pivot": [
+    7.2881,
+    30.0672,
+    8.42
+   ],
+   "axis": [
+    -0.2079,
+    0.9781,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "coverts_r_2",
+   "parent": "coverts_r",
+   "kind": "hinge",
+   "pivot": [
+    7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 4,
+   "triangles": 248,
+   "materials": [
+    "brass",
+    "bronze",
+    "ivory",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_coverts_r_2",
+   "parent": "coverts_r_2",
+   "kind": "seam",
+   "pivot": [
+    7.2371,
+    30.0554,
+    8.42
+   ],
+   "axis": [
+    -0.2419,
+    0.9703,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "coverts_r_3",
+   "parent": "coverts_r",
+   "kind": "hinge",
+   "pivot": [
+    7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 4,
+   "triangles": 248,
+   "materials": [
+    "brass",
+    "bronze",
+    "ivory",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_coverts_r_3",
+   "parent": "coverts_r_3",
+   "kind": "seam",
+   "pivot": [
+    7.1865,
+    30.0419,
+    8.42
+   ],
+   "axis": [
+    -0.2756,
+    0.9613,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "coverts_r_4",
+   "parent": "coverts_r",
+   "kind": "hinge",
+   "pivot": [
+    7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 4,
+   "triangles": 248,
+   "materials": [
+    "brass",
+    "bronze",
+    "ivory",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_coverts_r_4",
+   "parent": "coverts_r_4",
+   "kind": "seam",
+   "pivot": [
+    7.1365,
+    30.0266,
+    8.42
+   ],
+   "axis": [
+    -0.309,
+    0.9511,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "root_l",
+   "parent": null,
+   "kind": "hinge",
+   "pivot": [
+    -1.25,
+    19.0,
+    3.0
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 8,
+   "triangles": 704,
+   "materials": [
+    "brass",
+    "bronze_dark",
+    "ivory",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_root_l",
+   "parent": "root_l",
+   "kind": "seam",
+   "pivot": [
+    -1.05,
+    18.7,
+    3.62
+   ],
+   "axis": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 20,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "shoulder_gear_l",
+   "parent": "root_l",
+   "kind": "hinge",
+   "pivot": [
+    -1.05,
+    21.9,
+    3.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 2,
+   "triangles": 432,
+   "materials": [
+    "brass",
+    "ivory"
+   ]
+  },
+  {
+   "name": "shoulder_l",
+   "parent": "root_l",
+   "kind": "hinge",
+   "pivot": [
+    -1.05,
+    21.9,
+    3.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 16,
+   "triangles": 1104,
+   "materials": [
+    "brass",
+    "bronze",
+    "bronze_dark",
+    "ivory",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_humerus_l",
+   "parent": "shoulder_l",
+   "kind": "seam",
+   "pivot": [
+    -3.3311,
+    24.4673,
+    6.6646
+   ],
+   "axis": [
+    -0.7185,
+    0.6955,
+    0.0076
+   ],
+   "primitives": 1,
+   "triangles": 20,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "humerus_piston_l_cyl",
+   "parent": "root_l",
+   "kind": "hinge",
+   "pivot": [
+    -0.6,
+    18.4,
+    4.0
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 3,
+   "triangles": 260,
+   "materials": [
+    "brass",
+    "bronze_dark"
+   ]
+  },
+  {
+   "name": "humerus_piston_l_rod",
+   "parent": "humerus_piston_l_cyl",
+   "kind": "slide",
+   "pivot": [
+    -0.6,
+    18.4,
+    4.0
+   ],
+   "axis": [
+    -0.3139,
+    0.9169,
+    0.2465
+   ],
+   "primitives": 2,
+   "triangles": 152,
+   "materials": [
+    "brass"
+   ]
+  },
+  {
+   "name": "elbow_gear_l",
+   "parent": "shoulder_l",
+   "kind": "hinge",
+   "pivot": [
+    -7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 2,
+   "triangles": 824,
+   "materials": [
+    "brass",
+    "ivory"
+   ]
+  },
+  {
+   "name": "seam_elbow_l",
+   "parent": "elbow_gear_l",
+   "kind": "glow",
+   "pivot": [
+    -7.6,
+    28.6,
+    7.61
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "primitives": 1,
+   "triangles": 76,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "forearm_l",
+   "parent": "shoulder_l",
+   "kind": "hinge",
+   "pivot": [
+    -7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 15,
+   "triangles": 540,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "hand_l",
+   "parent": "forearm_l",
+   "kind": "hinge",
+   "pivot": [
+    -5.7622,
+    34.5775,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 20,
+   "triangles": 624,
+   "materials": [
+    "brass",
+    "bronze",
+    "ivory",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_forearm_0_l",
+   "parent": "forearm_l",
+   "kind": "seam",
+   "pivot": [
+    -7.597,
+    28.8539,
+    6.69
+   ],
+   "axis": [
+    0.0993,
+    0.9951,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 20,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "seam_forearm_1_l",
+   "parent": "forearm_l",
+   "kind": "seam",
+   "pivot": [
+    -7.3372,
+    30.9501,
+    6.69
+   ],
+   "axis": [
+    0.2939,
+    0.9558,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 20,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "seam_forearm_2_l",
+   "parent": "forearm_l",
+   "kind": "seam",
+   "pivot": [
+    -6.6685,
+    32.9537,
+    6.69
+   ],
+   "axis": [
+    0.4769,
+    0.879,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 20,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "seam_hand_0_l",
+   "parent": "hand_l",
+   "kind": "seam",
+   "pivot": [
+    -5.5982,
+    34.8121,
+    6.69
+   ],
+   "axis": [
+    0.6508,
+    0.7592,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 20,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "seam_hand_1_l",
+   "parent": "hand_l",
+   "kind": "seam",
+   "pivot": [
+    -4.0006,
+    36.5774,
+    6.69
+   ],
+   "axis": [
+    0.8034,
+    0.5955,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 20,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "seam_hand_2_l",
+   "parent": "hand_l",
+   "kind": "seam",
+   "pivot": [
+    -2.0505,
+    37.9432,
+    6.69
+   ],
+   "axis": [
+    0.9157,
+    0.402,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 20,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "primaries_l",
+   "parent": "shoulder_l",
+   "kind": "hinge",
+   "pivot": [
+    -7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 0,
+   "triangles": 0,
+   "materials": []
+  },
+  {
+   "name": "primaries_l_0",
+   "parent": "primaries_l",
+   "kind": "hinge",
+   "pivot": [
+    -7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 5,
+   "triangles": 172,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "primaries_l_0_ext",
+   "parent": "primaries_l_0",
+   "kind": "slide",
+   "pivot": [
+    -7.2055,
+    29.4089,
+    7.15
+   ],
+   "axis": [
+    0.4384,
+    0.8988,
+    0.0
+   ],
+   "primitives": 4,
+   "triangles": 216,
+   "materials": [
+    "amber",
+    "brass",
+    "bronze"
+   ]
+  },
+  {
+   "name": "seam_primaries_l_0",
+   "parent": "primaries_l_0",
+   "kind": "seam",
+   "pivot": [
+    -6.9424,
+    29.9482,
+    7.42
+   ],
+   "axis": [
+    0.4384,
+    0.8988,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "primaries_l_1",
+   "parent": "primaries_l",
+   "kind": "hinge",
+   "pivot": [
+    -7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 5,
+   "triangles": 172,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "primaries_l_1_ext",
+   "parent": "primaries_l_1",
+   "kind": "slide",
+   "pivot": [
+    -7.1914,
+    29.4019,
+    7.15
+   ],
+   "axis": [
+    0.454,
+    0.891,
+    0.0
+   ],
+   "primitives": 4,
+   "triangles": 216,
+   "materials": [
+    "amber",
+    "brass",
+    "bronze"
+   ]
+  },
+  {
+   "name": "seam_primaries_l_1",
+   "parent": "primaries_l_1",
+   "kind": "seam",
+   "pivot": [
+    -6.919,
+    29.9365,
+    7.42
+   ],
+   "axis": [
+    0.454,
+    0.891,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "primaries_l_2",
+   "parent": "primaries_l",
+   "kind": "hinge",
+   "pivot": [
+    -7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 5,
+   "triangles": 172,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "primaries_l_2_ext",
+   "parent": "primaries_l_2",
+   "kind": "slide",
+   "pivot": [
+    -7.1775,
+    29.3947,
+    7.15
+   ],
+   "axis": [
+    0.4695,
+    0.8829,
+    0.0
+   ],
+   "primitives": 4,
+   "triangles": 240,
+   "materials": [
+    "amber",
+    "brass",
+    "bronze"
+   ]
+  },
+  {
+   "name": "seam_primaries_l_2",
+   "parent": "primaries_l_2",
+   "kind": "seam",
+   "pivot": [
+    -6.8958,
+    29.9244,
+    7.42
+   ],
+   "axis": [
+    0.4695,
+    0.8829,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "primaries_l_3",
+   "parent": "primaries_l",
+   "kind": "hinge",
+   "pivot": [
+    -7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 5,
+   "triangles": 172,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "primaries_l_3_ext",
+   "parent": "primaries_l_3",
+   "kind": "slide",
+   "pivot": [
+    -7.1637,
+    29.3872,
+    7.15
+   ],
+   "axis": [
+    0.4848,
+    0.8746,
+    0.0
+   ],
+   "primitives": 4,
+   "triangles": 216,
+   "materials": [
+    "amber",
+    "brass",
+    "bronze"
+   ]
+  },
+  {
+   "name": "seam_primaries_l_3",
+   "parent": "primaries_l_3",
+   "kind": "seam",
+   "pivot": [
+    -6.8728,
+    29.9119,
+    7.42
+   ],
+   "axis": [
+    0.4848,
+    0.8746,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "primaries_l_4",
+   "parent": "primaries_l",
+   "kind": "hinge",
+   "pivot": [
+    -7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 5,
+   "triangles": 172,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "primaries_l_4_ext",
+   "parent": "primaries_l_4",
+   "kind": "slide",
+   "pivot": [
+    -7.15,
+    29.3794,
+    7.15
+   ],
+   "axis": [
+    0.5,
+    0.866,
+    0.0
+   ],
+   "primitives": 4,
+   "triangles": 216,
+   "materials": [
+    "amber",
+    "brass",
+    "bronze"
+   ]
+  },
+  {
+   "name": "seam_primaries_l_4",
+   "parent": "primaries_l_4",
+   "kind": "seam",
+   "pivot": [
+    -6.85,
+    29.899,
+    7.42
+   ],
+   "axis": [
+    0.5,
+    0.866,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "primaries_l_5",
+   "parent": "primaries_l",
+   "kind": "hinge",
+   "pivot": [
+    -7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 5,
+   "triangles": 172,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "primaries_l_5_ext",
+   "parent": "primaries_l_5",
+   "kind": "slide",
+   "pivot": [
+    -7.1365,
+    29.3715,
+    7.15
+   ],
+   "axis": [
+    0.515,
+    0.8572,
+    0.0
+   ],
+   "primitives": 4,
+   "triangles": 240,
+   "materials": [
+    "amber",
+    "brass",
+    "bronze"
+   ]
+  },
+  {
+   "name": "seam_primaries_l_5",
+   "parent": "primaries_l_5",
+   "kind": "seam",
+   "pivot": [
+    -6.8274,
+    29.8858,
+    7.42
+   ],
+   "axis": [
+    0.515,
+    0.8572,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "primaries_l_6",
+   "parent": "primaries_l",
+   "kind": "hinge",
+   "pivot": [
+    -7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 5,
+   "triangles": 172,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "primaries_l_6_ext",
+   "parent": "primaries_l_6",
+   "kind": "slide",
+   "pivot": [
+    -7.1231,
+    29.3632,
+    7.15
+   ],
+   "axis": [
+    0.5299,
+    0.848,
+    0.0
+   ],
+   "primitives": 4,
+   "triangles": 216,
+   "materials": [
+    "amber",
+    "brass",
+    "bronze"
+   ]
+  },
+  {
+   "name": "seam_primaries_l_6",
+   "parent": "primaries_l_6",
+   "kind": "seam",
+   "pivot": [
+    -6.8051,
+    29.8721,
+    7.42
+   ],
+   "axis": [
+    0.5299,
+    0.848,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "secondaries_l",
+   "parent": "shoulder_l",
+   "kind": "hinge",
+   "pivot": [
+    -7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 0,
+   "triangles": 0,
+   "materials": []
+  },
+  {
+   "name": "secondaries_l_0",
+   "parent": "secondaries_l",
+   "kind": "hinge",
+   "pivot": [
+    -7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 4,
+   "triangles": 248,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_secondaries_l_0",
+   "parent": "secondaries_l_0",
+   "kind": "seam",
+   "pivot": [
+    -7.1365,
+    30.0266,
+    7.92
+   ],
+   "axis": [
+    0.309,
+    0.9511,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "secondaries_l_1",
+   "parent": "secondaries_l",
+   "kind": "hinge",
+   "pivot": [
+    -7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 4,
+   "triangles": 248,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_secondaries_l_1",
+   "parent": "secondaries_l_1",
+   "kind": "seam",
+   "pivot": [
+    -7.1018,
+    30.0148,
+    7.92
+   ],
+   "axis": [
+    0.3322,
+    0.9432,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "secondaries_l_2",
+   "parent": "secondaries_l",
+   "kind": "hinge",
+   "pivot": [
+    -7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 4,
+   "triangles": 248,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_secondaries_l_2",
+   "parent": "secondaries_l_2",
+   "kind": "seam",
+   "pivot": [
+    -7.0673,
+    30.0022,
+    7.92
+   ],
+   "axis": [
+    0.3551,
+    0.9348,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "secondaries_l_3",
+   "parent": "secondaries_l",
+   "kind": "hinge",
+   "pivot": [
+    -7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 4,
+   "triangles": 272,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_secondaries_l_3",
+   "parent": "secondaries_l_3",
+   "kind": "seam",
+   "pivot": [
+    -7.0332,
+    29.9888,
+    7.92
+   ],
+   "axis": [
+    0.3778,
+    0.9259,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "secondaries_l_4",
+   "parent": "secondaries_l",
+   "kind": "hinge",
+   "pivot": [
+    -7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 4,
+   "triangles": 248,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_secondaries_l_4",
+   "parent": "secondaries_l_4",
+   "kind": "seam",
+   "pivot": [
+    -6.9995,
+    29.9745,
+    7.92
+   ],
+   "axis": [
+    0.4003,
+    0.9164,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "secondaries_l_5",
+   "parent": "secondaries_l",
+   "kind": "hinge",
+   "pivot": [
+    -7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 4,
+   "triangles": 248,
+   "materials": [
+    "brass",
+    "bronze",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_secondaries_l_5",
+   "parent": "secondaries_l_5",
+   "kind": "seam",
+   "pivot": [
+    -6.9661,
+    29.9595,
+    7.92
+   ],
+   "axis": [
+    0.4226,
+    0.9063,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "coverts_l",
+   "parent": "shoulder_l",
+   "kind": "hinge",
+   "pivot": [
+    -7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 0,
+   "triangles": 0,
+   "materials": []
+  },
+  {
+   "name": "coverts_l_0",
+   "parent": "coverts_l",
+   "kind": "hinge",
+   "pivot": [
+    -7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 4,
+   "triangles": 248,
+   "materials": [
+    "brass",
+    "bronze",
+    "ivory",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_coverts_l_0",
+   "parent": "coverts_l_0",
+   "kind": "seam",
+   "pivot": [
+    -7.3395,
+    30.0772,
+    8.42
+   ],
+   "axis": [
+    0.1736,
+    0.9848,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "coverts_l_1",
+   "parent": "coverts_l",
+   "kind": "hinge",
+   "pivot": [
+    -7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 4,
+   "triangles": 248,
+   "materials": [
+    "brass",
+    "bronze",
+    "ivory",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_coverts_l_1",
+   "parent": "coverts_l_1",
+   "kind": "seam",
+   "pivot": [
+    -7.2881,
+    30.0672,
+    8.42
+   ],
+   "axis": [
+    0.2079,
+    0.9781,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "coverts_l_2",
+   "parent": "coverts_l",
+   "kind": "hinge",
+   "pivot": [
+    -7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 4,
+   "triangles": 248,
+   "materials": [
+    "brass",
+    "bronze",
+    "ivory",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_coverts_l_2",
+   "parent": "coverts_l_2",
+   "kind": "seam",
+   "pivot": [
+    -7.2371,
+    30.0554,
+    8.42
+   ],
+   "axis": [
+    0.2419,
+    0.9703,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "coverts_l_3",
+   "parent": "coverts_l",
+   "kind": "hinge",
+   "pivot": [
+    -7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 4,
+   "triangles": 248,
+   "materials": [
+    "brass",
+    "bronze",
+    "ivory",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_coverts_l_3",
+   "parent": "coverts_l_3",
+   "kind": "seam",
+   "pivot": [
+    -7.1865,
+    30.0419,
+    8.42
+   ],
+   "axis": [
+    0.2756,
+    0.9613,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  },
+  {
+   "name": "coverts_l_4",
+   "parent": "coverts_l",
+   "kind": "hinge",
+   "pivot": [
+    -7.6,
+    28.6,
+    5.95
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "primitives": 4,
+   "triangles": 248,
+   "materials": [
+    "brass",
+    "bronze",
+    "ivory",
+    "seam"
+   ]
+  },
+  {
+   "name": "seam_coverts_l_4",
+   "parent": "coverts_l_4",
+   "kind": "seam",
+   "pivot": [
+    -7.1365,
+    30.0266,
+    8.42
+   ],
+   "axis": [
+    0.309,
+    0.9511,
+    0.0
+   ],
+   "primitives": 1,
+   "triangles": 12,
+   "materials": [
+    "seam_lit"
+   ]
+  }
+ ],
+ "key_poses": {
+  "folded": {
+   "shoulder_r": -0.0,
+   "shoulder_gear_r": 0.0,
+   "forearm_r": 0.0,
+   "hand_r": 0.0,
+   "primaries_r": 0.0,
+   "primaries_r_0": 0.0,
+   "primaries_r_0_ext": 0.0,
+   "primaries_r_1": 0.0,
+   "primaries_r_1_ext": 0.0,
+   "primaries_r_2": 0.0,
+   "primaries_r_2_ext": 0.0,
+   "primaries_r_3": 0.0,
+   "primaries_r_3_ext": 0.0,
+   "primaries_r_4": 0.0,
+   "primaries_r_4_ext": 0.0,
+   "primaries_r_5": 0.0,
+   "primaries_r_5_ext": 0.0,
+   "primaries_r_6": 0.0,
+   "primaries_r_6_ext": 0.0,
+   "secondaries_r": 0.0,
+   "secondaries_r_0": 0.0,
+   "secondaries_r_1": 0.0,
+   "secondaries_r_2": 0.0,
+   "secondaries_r_3": 0.0,
+   "secondaries_r_4": 0.0,
+   "secondaries_r_5": 0.0,
+   "coverts_r": 0.0,
+   "coverts_r_0": 0.0,
+   "coverts_r_1": 0.0,
+   "coverts_r_2": 0.0,
+   "coverts_r_3": 0.0,
+   "coverts_r_4": 0.0,
+   "elbow_gear_r": -0.0,
+   "shoulder_l": -0.0,
+   "shoulder_gear_l": 0.0,
+   "forearm_l": 0.0,
+   "hand_l": 0.0,
+   "primaries_l": 0.0,
+   "primaries_l_0": 0.0,
+   "primaries_l_0_ext": 0.0,
+   "primaries_l_1": 0.0,
+   "primaries_l_1_ext": 0.0,
+   "primaries_l_2": 0.0,
+   "primaries_l_2_ext": 0.0,
+   "primaries_l_3": 0.0,
+   "primaries_l_3_ext": 0.0,
+   "primaries_l_4": 0.0,
+   "primaries_l_4_ext": 0.0,
+   "primaries_l_5": 0.0,
+   "primaries_l_5_ext": 0.0,
+   "primaries_l_6": 0.0,
+   "primaries_l_6_ext": 0.0,
+   "secondaries_l": 0.0,
+   "secondaries_l_0": 0.0,
+   "secondaries_l_1": 0.0,
+   "secondaries_l_2": 0.0,
+   "secondaries_l_3": 0.0,
+   "secondaries_l_4": 0.0,
+   "secondaries_l_5": 0.0,
+   "coverts_l": 0.0,
+   "coverts_l_0": 0.0,
+   "coverts_l_1": 0.0,
+   "coverts_l_2": 0.0,
+   "coverts_l_3": 0.0,
+   "coverts_l_4": 0.0,
+   "elbow_gear_l": -0.0,
+   "humerus_piston_r_cyl": 0.0,
+   "humerus_piston_l_cyl": 0.0
+  },
+  "arch_splits": {
+   "shoulder_r": -2.595,
+   "shoulder_gear_r": 5.189,
+   "forearm_r": -14.096,
+   "hand_r": -20.863,
+   "primaries_r": 2.595,
+   "primaries_r_0": 0.0,
+   "primaries_r_0_ext": 0.0,
+   "primaries_r_1": 0.0,
+   "primaries_r_1_ext": 0.0,
+   "primaries_r_2": 0.0,
+   "primaries_r_2_ext": 0.0,
+   "primaries_r_3": 0.0,
+   "primaries_r_3_ext": 0.0,
+   "primaries_r_4": 0.0,
+   "primaries_r_4_ext": 0.0,
+   "primaries_r_5": 0.0,
+   "primaries_r_5_ext": 0.0,
+   "primaries_r_6": 0.0,
+   "primaries_r_6_ext": 0.0,
+   "secondaries_r": 2.595,
+   "secondaries_r_0": 0.0,
+   "secondaries_r_1": 0.0,
+   "secondaries_r_2": 0.0,
+   "secondaries_r_3": 0.0,
+   "secondaries_r_4": 0.0,
+   "secondaries_r_5": 0.0,
+   "coverts_r": 2.595,
+   "coverts_r_0": 0.0,
+   "coverts_r_1": 0.0,
+   "coverts_r_2": 0.0,
+   "coverts_r_3": 0.0,
+   "coverts_r_4": 0.0,
+   "elbow_gear_r": -3.892,
+   "shoulder_l": -2.595,
+   "shoulder_gear_l": 5.189,
+   "forearm_l": -14.096,
+   "hand_l": -20.863,
+   "primaries_l": 2.595,
+   "primaries_l_0": 0.0,
+   "primaries_l_0_ext": 0.0,
+   "primaries_l_1": 0.0,
+   "primaries_l_1_ext": 0.0,
+   "primaries_l_2": 0.0,
+   "primaries_l_2_ext": 0.0,
+   "primaries_l_3": 0.0,
+   "primaries_l_3_ext": 0.0,
+   "primaries_l_4": 0.0,
+   "primaries_l_4_ext": 0.0,
+   "primaries_l_5": 0.0,
+   "primaries_l_5_ext": 0.0,
+   "primaries_l_6": 0.0,
+   "primaries_l_6_ext": 0.0,
+   "secondaries_l": 2.595,
+   "secondaries_l_0": 0.0,
+   "secondaries_l_1": 0.0,
+   "secondaries_l_2": 0.0,
+   "secondaries_l_3": 0.0,
+   "secondaries_l_4": 0.0,
+   "secondaries_l_5": 0.0,
+   "coverts_l": 2.595,
+   "coverts_l_0": 0.0,
+   "coverts_l_1": 0.0,
+   "coverts_l_2": 0.0,
+   "coverts_l_3": 0.0,
+   "coverts_l_4": 0.0,
+   "elbow_gear_l": -3.892,
+   "humerus_piston_r_cyl": -0.033,
+   "humerus_piston_l_cyl": -0.033
+  },
+  "coverts_rise": {
+   "shoulder_r": -6.054,
+   "shoulder_gear_r": 12.108,
+   "forearm_r": -23.618,
+   "hand_r": -37.089,
+   "primaries_r": 6.054,
+   "primaries_r_0": 0.0,
+   "primaries_r_0_ext": 0.0,
+   "primaries_r_1": 0.0,
+   "primaries_r_1_ext": 0.0,
+   "primaries_r_2": 0.0,
+   "primaries_r_2_ext": 0.0,
+   "primaries_r_3": 0.0,
+   "primaries_r_3_ext": 0.0,
+   "primaries_r_4": 0.0,
+   "primaries_r_4_ext": 0.0,
+   "primaries_r_5": 0.0,
+   "primaries_r_5_ext": 0.0,
+   "primaries_r_6": 0.0,
+   "primaries_r_6_ext": 0.0,
+   "secondaries_r": 6.054,
+   "secondaries_r_0": 0.0,
+   "secondaries_r_1": 0.0,
+   "secondaries_r_2": 0.0,
+   "secondaries_r_3": 0.0,
+   "secondaries_r_4": 0.0,
+   "secondaries_r_5": 0.0,
+   "coverts_r": -83.546,
+   "coverts_r_0": 0.0,
+   "coverts_r_1": 11.2,
+   "coverts_r_2": 22.4,
+   "coverts_r_3": 33.6,
+   "coverts_r_4": 44.8,
+   "elbow_gear_r": -9.081,
+   "shoulder_l": -6.054,
+   "shoulder_gear_l": 12.108,
+   "forearm_l": -23.618,
+   "hand_l": -37.089,
+   "primaries_l": 6.054,
+   "primaries_l_0": 0.0,
+   "primaries_l_0_ext": 0.0,
+   "primaries_l_1": 0.0,
+   "primaries_l_1_ext": 0.0,
+   "primaries_l_2": 0.0,
+   "primaries_l_2_ext": 0.0,
+   "primaries_l_3": 0.0,
+   "primaries_l_3_ext": 0.0,
+   "primaries_l_4": 0.0,
+   "primaries_l_4_ext": 0.0,
+   "primaries_l_5": 0.0,
+   "primaries_l_5_ext": 0.0,
+   "primaries_l_6": 0.0,
+   "primaries_l_6_ext": 0.0,
+   "secondaries_l": 6.054,
+   "secondaries_l_0": 0.0,
+   "secondaries_l_1": 0.0,
+   "secondaries_l_2": 0.0,
+   "secondaries_l_3": 0.0,
+   "secondaries_l_4": 0.0,
+   "secondaries_l_5": 0.0,
+   "coverts_l": -83.546,
+   "coverts_l_0": 0.0,
+   "coverts_l_1": 11.2,
+   "coverts_l_2": 22.4,
+   "coverts_l_3": 33.6,
+   "coverts_l_4": 44.8,
+   "elbow_gear_l": -9.081,
+   "humerus_piston_r_cyl": -0.082,
+   "humerus_piston_l_cyl": -0.082
+  },
+  "secondaries_rise": {
+   "shoulder_r": -8.649,
+   "shoulder_gear_r": 17.297,
+   "forearm_r": -28.441,
+   "hand_r": -46.361,
+   "primaries_r": -26.351,
+   "primaries_r_0": 0.0,
+   "primaries_r_0_ext": 0.0,
+   "primaries_r_1": 3.25,
+   "primaries_r_1_ext": 0.0,
+   "primaries_r_2": 6.5,
+   "primaries_r_2_ext": 0.0,
+   "primaries_r_3": 9.75,
+   "primaries_r_3_ext": 0.0,
+   "primaries_r_4": 13.0,
+   "primaries_r_4_ext": 0.0,
+   "primaries_r_5": 16.25,
+   "primaries_r_5_ext": 0.0,
+   "primaries_r_6": 19.5,
+   "primaries_r_6_ext": 0.0,
+   "secondaries_r": -92.151,
+   "secondaries_r_0": 0.0,
+   "secondaries_r_1": 10.72,
+   "secondaries_r_2": 21.44,
+   "secondaries_r_3": 32.16,
+   "secondaries_r_4": 42.88,
+   "secondaries_r_5": 53.6,
+   "coverts_r": -103.351,
+   "coverts_r_0": 0.0,
+   "coverts_r_1": 14.0,
+   "coverts_r_2": 28.0,
+   "coverts_r_3": 42.0,
+   "coverts_r_4": 56.0,
+   "elbow_gear_r": 39.527,
+   "shoulder_l": -8.649,
+   "shoulder_gear_l": 17.297,
+   "forearm_l": -28.441,
+   "hand_l": -46.361,
+   "primaries_l": -26.351,
+   "primaries_l_0": 0.0,
+   "primaries_l_0_ext": 0.0,
+   "primaries_l_1": 3.25,
+   "primaries_l_1_ext": 0.0,
+   "primaries_l_2": 6.5,
+   "primaries_l_2_ext": 0.0,
+   "primaries_l_3": 9.75,
+   "primaries_l_3_ext": 0.0,
+   "primaries_l_4": 13.0,
+   "primaries_l_4_ext": 0.0,
+   "primaries_l_5": 16.25,
+   "primaries_l_5_ext": 0.0,
+   "primaries_l_6": 19.5,
+   "primaries_l_6_ext": 0.0,
+   "secondaries_l": -92.151,
+   "secondaries_l_0": 0.0,
+   "secondaries_l_1": 10.72,
+   "secondaries_l_2": 21.44,
+   "secondaries_l_3": 32.16,
+   "secondaries_l_4": 42.88,
+   "secondaries_l_5": 53.6,
+   "coverts_l": -103.351,
+   "coverts_l_0": 0.0,
+   "coverts_l_1": 14.0,
+   "coverts_l_2": 28.0,
+   "coverts_l_3": 42.0,
+   "coverts_l_4": 56.0,
+   "elbow_gear_l": 39.527,
+   "humerus_piston_r_cyl": -0.124,
+   "humerus_piston_l_cyl": -0.124
+  },
+  "primaries_fan": {
+   "shoulder_r": -8.649,
+   "shoulder_gear_r": 17.297,
+   "forearm_r": -28.441,
+   "hand_r": -46.361,
+   "primaries_r": -131.351,
+   "primaries_r_0": 0.0,
+   "primaries_r_0_ext": 1.8,
+   "primaries_r_1": 13.0,
+   "primaries_r_1_ext": 1.8,
+   "primaries_r_2": 26.0,
+   "primaries_r_2_ext": 1.8,
+   "primaries_r_3": 39.0,
+   "primaries_r_3_ext": 1.8,
+   "primaries_r_4": 52.0,
+   "primaries_r_4_ext": 1.8,
+   "primaries_r_5": 65.0,
+   "primaries_r_5_ext": 1.8,
+   "primaries_r_6": 78.0,
+   "primaries_r_6_ext": 1.8,
+   "secondaries_r": -117.351,
+   "secondaries_r_0": 0.0,
+   "secondaries_r_1": 13.4,
+   "secondaries_r_2": 26.8,
+   "secondaries_r_3": 40.2,
+   "secondaries_r_4": 53.6,
+   "secondaries_r_5": 67.0,
+   "coverts_r": -103.351,
+   "coverts_r_0": 0.0,
+   "coverts_r_1": 14.0,
+   "coverts_r_2": 28.0,
+   "coverts_r_3": 42.0,
+   "coverts_r_4": 56.0,
+   "elbow_gear_r": 197.027,
+   "shoulder_l": -8.649,
+   "shoulder_gear_l": 17.297,
+   "forearm_l": -28.441,
+   "hand_l": -46.361,
+   "primaries_l": -131.351,
+   "primaries_l_0": 0.0,
+   "primaries_l_0_ext": 1.8,
+   "primaries_l_1": 13.0,
+   "primaries_l_1_ext": 1.8,
+   "primaries_l_2": 26.0,
+   "primaries_l_2_ext": 1.8,
+   "primaries_l_3": 39.0,
+   "primaries_l_3_ext": 1.8,
+   "primaries_l_4": 52.0,
+   "primaries_l_4_ext": 1.8,
+   "primaries_l_5": 65.0,
+   "primaries_l_5_ext": 1.8,
+   "primaries_l_6": 78.0,
+   "primaries_l_6_ext": 1.8,
+   "secondaries_l": -117.351,
+   "secondaries_l_0": 0.0,
+   "secondaries_l_1": 13.4,
+   "secondaries_l_2": 26.8,
+   "secondaries_l_3": 40.2,
+   "secondaries_l_4": 53.6,
+   "secondaries_l_5": 67.0,
+   "coverts_l": -103.351,
+   "coverts_l_0": 0.0,
+   "coverts_l_1": 14.0,
+   "coverts_l_2": 28.0,
+   "coverts_l_3": 42.0,
+   "coverts_l_4": 56.0,
+   "elbow_gear_l": 197.027,
+   "humerus_piston_r_cyl": -0.124,
+   "humerus_piston_l_cyl": -0.124
+  },
+  "spread": {
+   "shoulder_r": -8.649,
+   "shoulder_gear_r": 17.297,
+   "forearm_r": -28.441,
+   "hand_r": -46.361,
+   "primaries_r": -131.351,
+   "primaries_r_0": 0.0,
+   "primaries_r_0_ext": 6.0,
+   "primaries_r_1": 13.0,
+   "primaries_r_1_ext": 6.0,
+   "primaries_r_2": 26.0,
+   "primaries_r_2_ext": 6.0,
+   "primaries_r_3": 39.0,
+   "primaries_r_3_ext": 6.0,
+   "primaries_r_4": 52.0,
+   "primaries_r_4_ext": 6.0,
+   "primaries_r_5": 65.0,
+   "primaries_r_5_ext": 6.0,
+   "primaries_r_6": 78.0,
+   "primaries_r_6_ext": 6.0,
+   "secondaries_r": -117.351,
+   "secondaries_r_0": 0.0,
+   "secondaries_r_1": 13.4,
+   "secondaries_r_2": 26.8,
+   "secondaries_r_3": 40.2,
+   "secondaries_r_4": 53.6,
+   "secondaries_r_5": 67.0,
+   "coverts_r": -103.351,
+   "coverts_r_0": 0.0,
+   "coverts_r_1": 14.0,
+   "coverts_r_2": 28.0,
+   "coverts_r_3": 42.0,
+   "coverts_r_4": 56.0,
+   "elbow_gear_r": 197.027,
+   "shoulder_l": -8.649,
+   "shoulder_gear_l": 17.297,
+   "forearm_l": -28.441,
+   "hand_l": -46.361,
+   "primaries_l": -131.351,
+   "primaries_l_0": 0.0,
+   "primaries_l_0_ext": 6.0,
+   "primaries_l_1": 13.0,
+   "primaries_l_1_ext": 6.0,
+   "primaries_l_2": 26.0,
+   "primaries_l_2_ext": 6.0,
+   "primaries_l_3": 39.0,
+   "primaries_l_3_ext": 6.0,
+   "primaries_l_4": 52.0,
+   "primaries_l_4_ext": 6.0,
+   "primaries_l_5": 65.0,
+   "primaries_l_5_ext": 6.0,
+   "primaries_l_6": 78.0,
+   "primaries_l_6_ext": 6.0,
+   "secondaries_l": -117.351,
+   "secondaries_l_0": 0.0,
+   "secondaries_l_1": 13.4,
+   "secondaries_l_2": 26.8,
+   "secondaries_l_3": 40.2,
+   "secondaries_l_4": 53.6,
+   "secondaries_l_5": 67.0,
+   "coverts_l": -103.351,
+   "coverts_l_0": 0.0,
+   "coverts_l_1": 14.0,
+   "coverts_l_2": 28.0,
+   "coverts_l_3": 42.0,
+   "coverts_l_4": 56.0,
+   "elbow_gear_l": 197.027,
+   "humerus_piston_r_cyl": -0.124,
+   "humerus_piston_l_cyl": -0.124
+  }
+ },
+ "counts": {
+  "joints": 130,
+  "triangles": 24224,
+  "hinges": 59,
+  "slides": 16,
+  "lights": 55
+ }
+}

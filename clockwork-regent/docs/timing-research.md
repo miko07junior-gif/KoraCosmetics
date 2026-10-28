@@ -1,10 +1,34 @@
 # Timing research: groundwork for the tick and the unfold
 
-**Status: not timed yet.** The brief asks for timing taken from frame-stepped footage
-of a real recoil escapement, the Peacock Clock and the Silver Swan. No footage has been
-stepped. Everything below is groundwork, gathered from web-search extracts only;
-Wikipedia and the Bowes Museum site were outside the session's network allow-list, so
-no number here has been checked against its full source page.
+**Status: the motion runs on a simulated escapement; footage hasn't been frame-stepped yet.**
+The brief's owner chose real motion over the stylised "kick back", so every move is now
+driven by a model of an anchor (recoil) escapement (`tools/motion.py`). Its constants
+come from the published geometry below. Frame-stepped footage should tune them; the
+protocol at the end says how.
+
+## The motion model (tools/motion.py)
+
+| Constant | Value | Meaning |
+|---|---|---|
+| Pendulum amplitude A | 2.5 deg | anchor clocks swing about 4-6 deg in total |
+| Lift | 3.0 deg | pendulum arc during which the tooth is on the impulse face |
+| Drop | 1.5 deg | free jump of the wheel when the tooth escapes |
+| K (wheel deg per pendulum deg) | 1.5 | so impulse + drop = 6 deg per beat, one seconds mark on a 30-tooth wheel |
+| Recoil | K x (A - lift/2) = 1.5 deg | the wheel is pushed back while the pendulum finishes its swing |
+
+Per 1 s beat (20 ticks), the wheel:
+1. creeps forward, recovering the last recoil (~6 ticks);
+2. pushes forward through the impulse (~8 ticks, fastest at the centre of the swing);
+3. drops instantly (+1.5 deg);
+4. drifts back 1.5 deg over the last ~6 ticks.
+
+The viewer's chart plots exactly this.
+
+- **Idle (dormant and awake):** 1 Hz. The heart's wheel and pallet move with it. The wings take a damped jolt at each drop, at most 0.17 deg folded and 0.28 deg spread (peak to peak), too small to pull an opponent's eye.
+- **Wake:** the train starts slowly (beats of 0.9, 0.6, 0.42 and 0.32 s), then runs at 4 beats/s. Each part is clutched to the wheel for its own window of beats: light, then arch, lift, coverts, secondaries, primaries, telescoping. Wake ends at 6.2 s (124 ticks).
+- **Mass:** each part follows the drive through a damped spring (zeta 0.55). Heavier parts are slower (primaries 3 Hz, coverts 5 Hz). That gives the lag at the start ("slow to start") and the overshoot when a window closes ("hard to stop").
+- **Sleep:** the same machinery reversed in order. Primaries close first, the light retreats into the heart last, and the train runs down to long beats.
+- **Per-tick table:** `design/timing_wake.csv`.
 
 Minecraft runs at 20 ticks/s, so 1 tick = 50 ms = 3 frames at 60 fps = 6 frames at 120 fps.
 

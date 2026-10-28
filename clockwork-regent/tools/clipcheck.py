@@ -17,10 +17,13 @@ import sys
 import numpy as np
 
 import player
-import rig
+import regent
 from geom import obb_arrays, obb_gap_matrix
 
-STATES = {
+STATES = {k: v for k, v in regent.KEY_POSES.items()}
+STATES.update({f"unfold_{int(f * 100)}": dict(t=f) for f in (0.25, 0.5, 0.75)})
+
+_OLD_STATES = {
     "folded": dict(t=0.0),
     "unfold_25": dict(t=0.25),
     "unfold_50": dict(t=0.5),
@@ -37,7 +40,7 @@ STATES = {
 def check(bones, poses, armor=True, slim=False, cape=False, states=STATES):
     results = {}
     for sname, sargs in states.items():
-        rpose = rig.pose_spread(**sargs)
+        rpose = regent.solve_pistons(bones, regent.pose_state(**sargs))
         worst = {}
         for pp in poses:
             cape_list = player.cape_angles(pp.sneak) if cape else [None]
@@ -45,7 +48,7 @@ def check(bones, poses, armor=True, slim=False, cape=False, states=STATES):
                 if cdeg is not None:
                     pp.cape_deg = float(cdeg)
                 pobbs, body_w = player.player_obbs(pp, slim=slim, armor=armor, cape=cdeg is not None)
-                robbs = rig.world_boxes(bones, rpose, player.body_attach(body_w))
+                robbs = regent.world_obbs(bones, rpose, player.body_attach(body_w))
                 gaps = obb_gap_matrix(obb_arrays(robbs), obb_arrays(pobbs))
                 allow = player.vanilla_self_clip_depth(pp, slim)
                 for j, po in enumerate(pobbs):
@@ -82,7 +85,7 @@ def main(argv=None):
     ap.add_argument("--out", default="")
     ap.add_argument("--quick", action="store_true", help="folded + spread only, motion poses and level look")
     a = ap.parse_args(argv)
-    bones = rig.build()
+    bones = regent.build()
     poses = player.envelope(include_rare=a.rare, step=a.step)
     states = STATES
     if a.quick:
@@ -94,7 +97,7 @@ def main(argv=None):
         print(f"{r['state']:<22} clips={r['clips']:<3} min_clearance={r['min_clearance']:>6}  nearest={r['nearest']['rig']} @ {r['nearest']['pose']}")
         for w in r["worst"]:
             print(f"    {w['depth']:>5} px  {w['rig']:<34} x {w['player']:<26} {w['pose']}")
-    pist = rig.piston_report()
+    pist = regent.piston_travel(bones, [regent.pose_state(**a) for a in STATES.values()] + [regent.pose_state(t=i / 20) for i in range(21)])
     print("pistons:", pist)
     if a.out:
         os.makedirs(os.path.dirname(a.out), exist_ok=True)

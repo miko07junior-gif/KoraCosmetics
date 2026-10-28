@@ -149,7 +149,7 @@ Run with `clipcheck.py`; results are in `../renders/checks/`.
 | Common (look every 15 deg, sprint 32 phases x 3 idle-sway ages, sneak, attack, item poses; classic arms, full armor) | 718 | **0 clips** in all 9 states |
 | Rare (adds the overhead trident throw), look every 30 deg | 532 | **0 clips** |
 | Slim arms, no armor, look every 30 deg | 516 | **0 clips** |
-| Vanilla cape worn (folded + spread; motion poses, level look, 12 cape angles) | - | pending: run in progress |
+| Vanilla cape worn (folded + spread; motion poses, level look, 12 cape angles) | 444 | **the cape clips the spine column by up to 4.7 px** (cape swung to about 62 deg). No other player part clips. This confirms the structural conflict in section 3 |
 
 The closest contacts that aren't vanilla-excused:
 - closed primaries vs a sprinting pauldron, 0.25 px or more since the 11.5 standoff;
